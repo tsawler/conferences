@@ -151,11 +151,11 @@
                     </label>
 
                     <label for="last_name">Last Name<br>
-                        <input type="text" name="last_name class="required"">
+                        <input type="text" name="last_name" class="required">
                     </label>
 
                     <label for="company">Company/Organization<br>
-                        <input type="text" name="first_name">
+                        <input type="text" name="company" class="required">
                     </label>
 
                     <label for="email">Email address<br>
