@@ -68,9 +68,6 @@
             width: 50%;
         }
 
-        #sub {
-            width: auto;
-        }
     </style>
 
 </head>
@@ -211,8 +208,7 @@
                 <hr>
                 <p>You may wish to review our <a href="">privacy policy</a>. We will never share
                     your personal information with a third party, and only use it to organize the conference.</p>
-                <input type="submit" id='sub' value="Submit Registration">
-
+                <button>Submit Registration</button>
             </form>
 
         </div>
