@@ -17,6 +17,7 @@ class CreateConferencesTable extends Migration {
 			$table->increments('id');
             $table->integer('conference_year');
             $table->integer('conference_name');
+            $table->text('description');
 			$table->timestamps();
 		});
 	}

@@ -30,11 +30,6 @@ class CreateConferenceRegistrantsTable extends Migration {
 
             $table->index('conference_id');
 
-            $table->foreign('conference_id')
-                ->references('id')
-                ->on('conferences')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
 		});
 	}
 
