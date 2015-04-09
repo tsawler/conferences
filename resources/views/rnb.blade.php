@@ -180,7 +180,7 @@
                         <input type="text" name="phone">
                     </label>
 
-                    <label for="commission">Solid Waste Commission<br>
+                    <label for="commission">Regional Service Commissions<br>
                         <select name="commission">
                             <option value="">N/A</option>
                             <option value="1">Northwest Regional Service Commission</option>
