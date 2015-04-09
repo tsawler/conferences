@@ -183,14 +183,27 @@
                     <label for="commission">Solid Waste Commission<br>
                         <select name="commission">
                             <option value="">N/A</option>
+                            <option value="1">Northwest Regional Service Commission</option>
+                            <option value="2">Restigouche Regional Service Commission //option>
+                            <option value="3">Chaleur Regional Service Commission</option>
+                            <option value="4">Acadian Peninsula Regional Service Commission</option>
+                            <option value="5">Greater Miramichi Regional Service Commission</option>
+                            <option value="6">Kent Regional Service Commission</option>
+                            <option value="7">Southeast Regional Service Commission</option>
+                            <option value="8">Regional Service Commission 8 </option>
+                            <option value="9">Fundy Regional Service Commission</option>
+                            <option value="10">Southwest New Brunswick Service Commission </option>
+                            <option value="11">Regional Service Commission 11</option>
+                            <option value="12">Regional Service Commission 12 (Western Valley Regional Service
+                                Commission)</option>
                         </select>
                     </label>
 
-                    <label for="regional_commission">Regional Service Commission<br>
-                        <select name="regional_commission">
-                            <option value="">N/A</option>
-                        </select>
-                    </label>
+                    {{--<label for="regional_commission">Regional Service Commission<br>--}}
+                        {{--<select name="regional_commission">--}}
+                            {{--<option value="">N/A</option>--}}
+                        {{--</select>--}}
+                    {{--</label>--}}
 
                 </fieldset>
 
