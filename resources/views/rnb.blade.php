@@ -49,13 +49,10 @@
     <!--[if IE 6]>
     <script type="text/javascript" src="/resource/js/ie6.js"></script>
     <![endif]-->
-    <script type='text/javascript' src='/resource/js/jquery-1.4.2.min.js'></script>
 
     <!-- JAVASCRIPT LIBRARIES -->
-    <script type="text/javascript" src="/resource/js/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="/resource/js/jquery.validate.js"></script>
-    <script type="text/javascript" src="/resource/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="/resource/js/custom.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 
     <style>
         input {
@@ -69,6 +66,10 @@
 
         select {
             width: 50%;
+        }
+
+        #sub {
+            width: auto;
         }
     </style>
 
@@ -145,15 +146,15 @@
                     <legend>Registration Information</legend>
                     <br>
                     <label for="title">Title<br>
-                        <input type="text" name="title">
+                        <input type="text" name="title" class="required">
                     </label>
 
                     <label for="first_name">First Name<br>
-                        <input type="text" name="first_name">
+                        <input type="text" name="first_name" class="required">
                     </label>
 
                     <label for="last_name">Last Name<br>
-                        <input type="text" name="first_name">
+                        <input type="text" name="last_name class="required"">
                     </label>
 
                     <label for="company">Company/Organization<br>
@@ -161,23 +162,23 @@
                     </label>
 
                     <label for="email">Email address<br>
-                        <input type="email" name="first_name">
+                        <input type="email" name="email" class="required email">
                     </label>
 
                     <label for="address">Mailing address<br>
-                        <input type="text" name="address">
+                        <input type="text" name="address" class="required">
                     </label>
 
                     <label for="city">City/Town<br>
-                        <input type="text" name="city">
+                        <input type="text" name="city" class="required">
                     </label>
 
                     <label for="zip">Postal Code<br>
-                        <input type="text" name="zip">
+                        <input type="text" name="zip" class="required">
                     </label>
 
                     <label for="phone">Phone<br>
-                        <input type="text" name="phone">
+                        <input type="text" name="phone" class="required">
                     </label>
 
                     <label for="commission">Regional Service Commission<br>
@@ -210,7 +211,7 @@
                 <hr>
                 <p>You may wish to review our <a href="">privacy policy</a>. We will never share
                     your personal information with a third party, and only use it to organize the conference.</p>
-                <button>Submit Registration</button>
+                <input type="submit" id='sub' value="Submit Registration">
 
             </form>
 
@@ -219,50 +220,6 @@
 
         <!-- SIDEBAR -->
         <div id="sidebar">
-
-            <!-- <ul id="nav">
-    <li class="here"><a href="http://www.recyclenb.com/en/http://www.recyclenb.com/en/en/">Welcome</a>
-    <ul>
-    <li class="last"><a href="http://www.recyclenb.com/en/http://www.recyclenb.com/en/en/boardmembers/">Board Members</a></li>
-    </ul>
-    </li>
-    </ul> -->
-
-
-
-
-            {{--<a href="http://www.recyclenb.com/en/http://www.soghu.com/en/cf.aspx?prov=4" target="_blank" class="ad1"><img src="/resource/images/sidebar-collection-en.png" /></a><br /><br />--}}
-            {{--<a href="http://www.recyclenb.com/en/http://www.recyclenb.com/en/images/uploads/Atlantic-Proposed-Framework-and-Implementation-Plan-E.pdf" target="_blank" style="margin-left: 5px;"><img src="/resource/images/framework-en.jpg" /></a>--}}
-
-
-
-            {{--<div id="survey">--}}
-
-            {{--<h3></h3>--}}
-
-            {{--<p style="margin-top: -30px; padding-right: 20px;">--}}
-            {{--<strong>Program Registration Forms</strong><br />--}}
-            {{--&bull; <a href="http://www.recyclenb.com/en/docs/Brand-Owner-Registration-Form-ENG.pdf" target="_blank">Oil and Glycol Program</a><br />--}}
-            {{--&bull; <a href="http://www.recyclenb.com/en/docs/RNB-Registration-Form-Tire-Program.pdf" target="_blank">Tire Program</a><br />--}}
-            {{--&bull; <a href="http://www.recyclenb.com/en/docs/Brand-Owner-Registration-Form-ENG.pdf" target="_blank">Paint Program</a>--}}
-            {{--</p>--}}
-
-            {{--</div>--}}
-
-
-
-
-            {{--<!-- CAREER OPPORTUNITIES -->--}}
-            {{--<div id="careerOpps">--}}
-
-            {{--<h3>Career Opportunities</h3>--}}
-
-            {{--<ul>--}}
-            {{--<li class="last"><p>There are no career opportunities available at the present time.</p></li>--}}
-            {{--</ul>--}}
-
-            {{--</div>--}}
-            <!-- /CAREER OPPORTUNITIES -->
 
 
         </div>
@@ -357,5 +314,10 @@
 
 {{--</script>--}}
 
+<script>
+    $(document).ready(function () {
+        $("#regform").validate();
+    });
+</script>
 </body>
 </html>
