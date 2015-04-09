@@ -173,9 +173,9 @@
                         <input type="text" name="phone" class="required">
                     </label>
 
-                    <label for="commission">Regional Service Commission<br>
-                        <select name="commission">
-                            <option value="">N/A</option>
+                    <label for="commission_id">Regional Service Commission<br>
+                        <select name="commission_id">
+                            <option value="0">N/A</option>
                             <option value="1">Northwest Regional Service Commission</option>
                             <option value="2">Restigouche Regional Service Commission //option>
                             <option value="3">Chaleur Regional Service Commission</option>
@@ -198,6 +198,7 @@
                 <p>You may wish to review our <a href="">privacy policy</a>. We will never share
                     your personal information with a third party, and only use it to organize the conference.</p>
                 <button>Submit Registration</button>
+                <input type="hidden" name="conference_id" value="1">
             {!! Form::close() !!}
 
         </div>

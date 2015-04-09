@@ -11,18 +11,21 @@
 |
 */
 
-Route::get('/', function ()
-{
-    $conference = \App\Conference::find(1);
+//Route::get('/', function ()
+//{
+//    $conference = \App\Conference::find(1);
+//
+//    return View::make('rnb')
+//        ->with('conference', $conference);
+//});
+//
+//Route::post('/register', function ()
+//{
+//    return "will save form";
+//});
 
-    return View::make('rnb')
-        ->with('conference', $conference);
-});
-
-Route::post('/register', function ()
-{
-    return "will save form";
-});
+Route::get('/', 'ConferenceRegistrationController@getRegistrationform');
+Route::post('/register', 'ConferenceRegistrationController@postRegistrationform');
 
 Route::controllers([
     'auth'     => 'Auth\AuthController',
