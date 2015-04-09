@@ -117,7 +117,7 @@
 
             <h1>Conference Registration</h1>
 
-            <form>
+            <form method="post" name="regform" id="regform">
 
                 <label for="title">Title<br>
                     <input type="text" name="title">
@@ -168,6 +168,8 @@
                 </label>
 
                 <hr>
+                <p>You may wish to review our <a href="">privacy policy</a>. We will never share
+                your personal information with a third party, and only use it to organize the conference.</p>
                 <button>Submit Registration</button>
 
             </form>
