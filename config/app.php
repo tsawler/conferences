@@ -149,6 +149,7 @@ return [
         'Intervention\Image\ImageServiceProvider',
         'Illuminate\Html\HtmlServiceProvider',
         'Tsawler\Vcms5\Vcms5ServiceProvider',
+        'Jenssegers\Date\DateServiceProvider',
 
 	],
 
@@ -201,6 +202,7 @@ return [
         'Image'     => 'Intervention\Image\Facades\Image',
         'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
+        'Date'      => 'Jenssegers\Date\Date',
 
 	],
 
