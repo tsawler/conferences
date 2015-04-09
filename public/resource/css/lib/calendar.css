@@ -1,0 +1,31 @@
+table.calendar {
+	clear: both; 
+	width: 100%;
+	border-collapse: collapse; }
+						
+	table.calendar thead th { 
+		padding: 7px 10px;
+		font-weight: bold;
+		text-align: center;
+		color: #fff;
+		background: #7c5823;
+		border-color: #7c5823; }
+	
+	table.calendar tbody td { 
+		width: 14%;
+		height: 70px;
+		padding: 0;
+		font-size: 11px;
+		line-height: 14px;
+		vertical-align: top;
+		background: #fff;
+		border: 1px solid #e8e8e8; }
+	
+	table.calendar tbody td.out_of_range div { display: none; }
+	
+		table.calendar tbody td div.date { 
+			padding: 3px 10px;
+			background: #f9f9f9; }
+						
+		table.calendar tbody td div.event { 
+			padding: 7px 10px; }

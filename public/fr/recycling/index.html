@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- METATAGS -->
+<title>Recyclage - Recycle NB</title>
+
+<meta name='description' content='' />
+<meta name='keywords' content='' />
+<meta name='robots' content='index,follow,archive' />
+
+<meta name='geo.position' content=',' />
+<meta name='geo.placename' content='' />
+<meta name='geo.region' content='' />
+
+
+<link rel='schema.DC' href='http://purl.org/dc/elements/1.1/' />
+<link rel='schema.DCTERMS' href='http://purl.org/dc/terms/' />
+<meta name='DC.title' content='Recyclage - Recycle NB' />
+<meta name='DC.creator' content='Administrator' />
+<meta name='DC.subject' content='' />
+<meta name='DC.description' content='' />
+<meta name='DC.publisher' content='' />
+<meta name='DC.date.created' scheme='DCTERMS.W3CDTF' content='2010-06-23T11:19:28-0400' />
+<meta name='DC.date.modified' scheme='DCTERMS.W3CDTF' content='2010-11-25T16:07:29-0500' />
+<meta name='DC.date.valid' scheme='DCTERMS.W3CDTF' content='2015-04-15T16:39:41-0400' />
+<meta name='DC.type' scheme='DCTERMS.DCMIType' content='Text' />
+<meta name='DC.rights' scheme='DCTERMS.URI' content='' />
+<meta name='DC.format' content='text/html' />
+<meta name='DC.identifier' scheme='DCTERMS.URI' content='http://recyclenb.com/fr/recycling/' />
+
+<!-- STYLESHEETS -->
+<link rel="stylesheet" href="../../resource/css/screen.css" type="text/css" media="screen,projection" />
+
+<!--[if IE 8]><link rel="stylesheet" href="../../resource/css/lib/ie8.css" type="text/css" media="screen,projection" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="../../resource/css/lib/ie7.css" type="text/css" media="screen,projection" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="../../resource/css/lib/ie6.css" type="text/css" media="screen,projection" /><![endif]-->
+
+<!-- PRINT STYLESHEET -->
+<link rel="stylesheet" href="../../resource/css/print.css" type="text/css" media="print" />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../resource/icons/favicon.ico">
+
+<!--[if IE 6]>
+<script type="text/javascript" src="../../resource/js/ie6.js"></script>
+<![endif]-->
+<script type='text/javascript' src='../../resource/js/jquery-1.4.2.min.js'></script>
+<script type='text/javascript' src='../../admin/modules/lg_polls/scripts/lg_polls.js'></script>
+
+<!-- JAVASCRIPT LIBRARIES -->
+<script type="text/javascript" src="../../resource/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../resource/js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="../../resource/js/custom.js"></script>
+
+</head>
+<body class="recycling">
+
+<!-- HEADER -->
+<div id="header">
+	
+	
+		<div id="language">
+		<p><a href="../../en/recycling/index.html" title="English">English</a></p>
+	</div>	
+	
+	<!-- LOGO -->
+	<a href="../index.html" title="Recycle NB" id="logo">Recycle NB</a>
+	<!-- /LOGO -->
+
+	<!-- NAV -->
+	<ul id="nav">
+		<li class="anotresujet "><a href="../a_notre_sujet/index.html" title="&Agrave; notre sujet">&Agrave; notre sujet</a></li>
+		<li class="calendrier "><a href="../calendrier/index.html" title="Calendrier">Calendrier</a></li>
+		<li class="communaute "><a href="../communaute/index.html" title="Communaut&eacute;">Communaut&eacute;</a></li>
+		<li class="medias "><a href="../medias/index.html" title="M&eacute;dias">M&eacute;dias</a></li>
+		<li class="ressources "><a href="../ressources/index.html" title="Ressources">Ressources</a></li>
+		<li class="contacteznous "><a href="../pour_nous_joindre/index.html" title="Pour Nouse Joindre">Pour Nouse Joindre</a></li>
+	</ul>
+	<!-- /NAV -->
+	
+	<!-- KIDSPAGE -->
+	<a href="../pour_les_enfants/index.html" title="Pour les enfants" class="kids_french">Pour les enfants</a>
+	<!-- /KIDSPAGE -->
+	
+	
+</div>
+<!-- /HEADER -->
+
+<!-- WRAPPER -->
+<div id="container">
+<div id="wrapper" class="clearfix recycling ">
+	
+		<div id="breadcrumb">
+		
+	</div>
+	
+
+	<script type="text/javascript">
+	// <![CDATA[
+		jQuery(document).ready(function(){
+
+			// Get the numeric hash and assign it to ID
+			var id = jQuery(document).attr('location').hash.replace(/[^0-9]/g, '');
+			
+			// If a numberic hash doesn't exist, get the ID of the currently selected region
+			if (id == '')
+			{
+				id = jQuery('select#chooseRegion').val();
+			}
+			
+			// Load the appropriate data based off of the ID obtained above
+			loadRecyclingData(id, 'fr');
+		
+			// If the choose region dropdown is changed...
+			jQuery('select#chooseRegion').change(function()
+			{
+				// ...load new data based off of the ID
+				loadRecyclingData(jQuery('select#chooseRegion').val(), 'fr');
+			});
+			
+		});
+	// ]]>
+	</script>
+		
+	<!-- RECYCLING -->
+	<div id="recycling">
+		
+		<!-- FORM -->
+		<form name="" action="" method="post">
+			<h1 class="fr">Le recyclage par r&eacute;gion</h1>
+			<p>S&eacute;lectionnez une r&eacute;gion de gestion des d&eacute;chets solides sur la liste afin de conna&icirc;tre le meilleur moyen de recycler les mati&egrave;res suivantes :</p>		
+			<select name="chooseRegion" id="chooseRegion">
+				
+				<option value="191">Fredericton</option>
+				
+				<option value="190">Fundy</option>
+				
+				<option value="196">Nepisiguit-Chaleur</option>
+				
+				<option value="187">Restigouche</option>
+				
+				<option value="193">COGERNO</option>
+				
+				<option value="495">Sud-Ouest</option>
+				
+				<option value="192">Westmorland-Albert</option>
+				
+				<option value="188">Northumberland</option>
+				
+				<option value="185">Vall&#233;e</option>
+				
+				<option value="195">Kent</option>
+				
+				<option value="194">COGEDES</option>
+				
+				<option value="189">Kings</option>
+				
+			</select>
+		</form>
+		<!-- /FORM -->
+		
+		<!-- MAP -->
+		<div id="map">
+			<img src="../../resource/images/recycling_map.jpg" border="0" usemap="#Map" />
+		</div>
+		<!-- /MAP -->
+		
+		<!-- CONTACTINFO -->
+		<div id="contactInfo">
+			<h4></h4>
+			<p>
+				<strong>Lieu :</strong> <span id="regionLocation"></span><br />
+				<strong>Adresse postale :</strong><br />
+				<span id="regionAddress"></span><br />
+				<span id="regionCity"></span>, N-B, <span id="regionPostcode"></span>
+			</p>
+			<p>
+				<strong>T&eacute;l&eacute;phone:</strong> <span id="regionPhone"></span><br />
+				<strong>T&eacute;l&eacute;copieur :</strong> <span id="regionFax"></span><br />
+				<strong>Courriel :</strong> <a href="" title="" id="regionEmail"></a>
+			</p>
+			<p>
+				<strong>Direction g&eacute;n&eacute;rale :</strong> <span id="regionGeneralManager"></span><br />
+				<strong>Pr&eacute;sidence :</strong> <span id="regionChairperson"></span></p>
+			<p><a href="" title="" target="_blank" class="website" id="regionWeb"></a></p>
+		</div>
+		<!-- /CONTACTINFO -->
+		
+		<!-- RECYCLETYPES -->
+		
+		<div id="recyclingDescription">
+		</div>	
+		
+		<div id="recycleTypes">
+		
+			<h3>Comment recycler...</h3>
+			<ul>
+			
+			</ul>
+		</div>
+		<!-- /RECYCLETYPES -->
+		
+		<!-- DIRECTIONS -->
+		<div id="directions" class="french clearfix">
+			<h3></h3>
+			<div id="recycleTypeInfo"></div>
+		</div>
+		<!-- /DIRECTIONS -->
+		
+	</div>
+	<!-- /RECYCLING -->
+
+			
+</div>
+</div>
+<!-- /WRAPPER -->
+
+<!-- FOOTERWRAPPER -->
+<div id="footerWrapper" class="fr">
+
+	<!-- FOOTER -->
+	<div id="footer">
+		
+		<!-- RECYCLENB -->
+		<a href="../../index.html" title="Recycle NB" class="recyclenb">Recycle NB</a>
+		<!-- /RECYCLENB -->
+		
+				<!-- SITEMAP -->
+		<ul id="siteMap" class="clearfix">
+			<li>
+				<ul>
+					<li><a href="../index.html" title="Accueil">Accueil</a></li>
+					<li><a href="../a_notre_sujet/index.html" title="&Agrave; notre sujet">&Agrave; notre sujet</a></li>
+					<li><a href="../calendrier/index.html" title="Calendrier">Calendrier</a></li>
+					<li><a href="../communaute/index.html" title="Communaut&eacute;">Communaut&eacute;</a></li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li><a href="../programmes/index.html" title="Programmes">Programmes</a></li>
+					<li><a href="index.html" title="Recyclage">Recyclage par r&eacute;gion</a></li>
+					<li><a href="../le_compostage/index.html" title="Le compostage">Le compostage</a></li>
+					<li><a href="../ressources_pour_les_enseignants/index.html" title="L'&eacute;ducation">L'&eacute;ducation</a></li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li><a href="../programmes/programmes_dintendance_des_pneus/index.html" title="Programme de pneu">Programme de pneu</a></li>
+					<li><a href="../programmes/programme_decologisation_de_la_peinture/index.html" title="Programme de peinture">Programme de peinture</a></li>		
+					<li><a href="../programmes/petrole_et_programme_de_recyclage_de_glycol/index.html" title="Programme de petrole et glycol">Programme de p&eacute;trole et glycol</a></li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li><a href="../pour_les_enfants/index.html" title="Pour les enfants">Pour les enfants</a></li>
+					<li><a href="../ressources_pour_les_enseignants/index.html" title="Ressources pour les enseignants">Ressources pour les enseignants</a></li>
+					<li><a href="../dictionnaire_du_recyclage/index.html" title="Dictionnaire du recyclage">Dictionnaire du recyclage</a></li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li><a href="../medias/index.html" title="M&eacute;dias">M&eacute;dias</a></li>
+					<li><a href="../ressources/index.html" title="Ressources">Ressources</a></li>
+					<li><a href="../pour_nous_joindre/index.html" title="Pour Nous Joindre">Pour nous joindre</a></li>
+				</ul>
+			</li>												
+		</ul>
+		<!-- /SITEMAP -->
+				
+		<!-- COPYRIGHT -->
+		<p class="copyright">&copy; 2015 Recycle NB</p>
+		
+		
+		<!-- /COPYRIGHT -->
+		
+	</div>
+	<!-- /FOOTER -->
+
+</div>
+<!-- /FOOTERWRAPPER -->
+
+
+<!-- DISQUS -->
+<script type="text/javascript">
+$(document).ready(function(){
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	var disqus_shortname = 'recyclenb'; // required: replace example with your forum shortname
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function () {
+	    var s = document.createElement('script'); s.async = true;
+	    s.type = 'text/javascript';
+	    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	}());
+});
+</script>
+<!-- /DISQUS -->
+
+<!-- GA -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36229613-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

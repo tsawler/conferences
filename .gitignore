@@ -4,3 +4,4 @@
 .idea
 ssl
 logs
+composer.lock

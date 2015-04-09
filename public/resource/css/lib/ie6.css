@@ -1,0 +1,4 @@
+/************* IE6 FIXES & STYLES ***/
+body.homepage #footerWrapper { margin-top: -225px; }
+
+button { padding: 0 5px; }

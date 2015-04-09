@@ -145,6 +145,11 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+        'Tsawler\Laravelfilemanager\LaravelFilemanagerServiceProvider',
+        'Intervention\Image\ImageServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider',
+        'Tsawler\Vcms5\Vcms5ServiceProvider',
+
 	],
 
 	/*
@@ -192,6 +197,10 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+        'Image'     => 'Intervention\Image\Facades\Image',
+        'Form'      => 'Illuminate\Html\FormFacade',
+        'Html'      => 'Illuminate\Html\HtmlFacade',
 
 	],
 

@@ -4,8 +4,22 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"type": "project",
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/tsawler/vcms5"
+      }
+    ],
 	"require": {
-		"laravel/framework": "5.0.*"
+		"laravel/framework": "5.0.*",
+        "illuminate/html": "~5.0",
+        "intervention/image": "2.*",
+        "francodacosta/phmagick": "0.4.*@dev",
+        "barryvdh/laravel-elfinder": "0.3.*",
+        "jenssegers/date": "~2.0",
+        "tsawler/vcms5": "dev-development",
+        "tsawler/laravel-filemanager": "0.5.*",
+        "filp/whoops": "~1.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

@@ -1,0 +1,368 @@
+//SET NOCONFLICT TO WORK WITH OTHER LIBRARIES
+jQuery.noConflict();
+
+//CUSTOM JQUERY FUNCTIONS
+jQuery(document).ready(function(){
+
+	/*
+	if(location.hash != "#enter")
+	{	
+		jQuery('.modal-frame').hide();
+	}
+	*/
+	
+	// blog sharing functionality
+	jQuery('body').on('click','.blog-share li a',function(e){
+		e.preventDefault();
+		var u = location.href;
+		var t = 'Recycle NB';
+		
+		if(jQuery(this).attr('data-url'))
+		{
+			u = jQuery(this).attr('data-url');
+		}
+		
+		if(jQuery(this).hasClass('facebook'))
+		{
+			window.open('https://www.facebook.com/sharer/sharer.php?s=100&p[url]=' + encodeURIComponent(u) + '&p[title]=' + encodeURIComponent(t) + '', 'blank', 'width=626,height=300');
+		}
+		else if(jQuery(this).hasClass('twitter'))
+		{
+			window.open('https://twitter.com/intent/tweet?tw_p=tweetbutton&via=NRecycle&url=' + u, 'blank', 'width=626,height=300');
+		}
+		else if(jQuery(this).hasClass('gplus'))
+		{
+			window.open('https://plus.google.com/share?url=' + encodeURIComponent(u), 'blank', 'width=626,height=300');
+		}
+		else if(jQuery(this).hasClass('linkedin'))
+		{
+			window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(u) + '&title=' + encodeURIComponent(t) + '&source=' + encodeURIComponent(t), 'blank', 'width=626,height=300');
+		}
+
+	});
+	
+	jQuery('.modal-frame').hide();
+
+	jQuery('.modal-close').on('click', function () {
+		jQuery('.modal-frame').fadeOut(300);
+	});
+	
+	jQuery('.tire-form-en').on('click', function () {
+		jQuery('.modal-frame.en').fadeIn(300);
+	});
+	
+	jQuery('.tire-form-fr').on('click', function () {
+		console.log('fl');
+		jQuery('.modal-frame.fr').fadeIn(300);
+	});
+	
+	jQuery('input, textarea').clearInput();
+
+
+
+	var seg1 = '/resource/';
+	var seg2 = 'php/';
+	var seg3 = 'sendEmail_contact.php';
+
+	jQuery.validator.addMethod("defaultInvalid", function(value, element) 
+	{
+	    return !(element.value == element.defaultValue);
+	});
+	
+	jQuery('form#contactFormEn').validate({
+		rules: {
+			fname: "defaultInvalid",
+			lname: "defaultInvalid",
+			address: "defaultInvalid",
+			store: "defaultInvalid",
+			phone: "defaultInvalid"
+		},
+		messages: {
+			fname: "Please fill in your first name",
+			lname: "Please fill in your last name",
+			phone: "Please fill in your phone number",
+			address: "Please enter your address",
+			store: "Please enter your store number"
+		},
+		onkeyup: false,
+		onfocusout: false,
+		onclick: false,
+		submitHandler: function(form){ 	
+			//Serialize the form data
+			var formData = jQuery('form#contactFormEn').serialize();
+			
+			//Send the form data to the script
+			jQuery.ajax({
+				type: 'POST',
+				url: seg1+seg2+seg3,
+				data: formData,
+				error: contactFormErrorEn,
+				success: contactFormSuccessEn
+			});
+			
+			//Stop the contactform from refreshing the page on submit
+			return false;			
+		}
+	});
+
+	function contactFormErrorEn() {
+		
+		return false;
+	
+	}
+	
+	//Contact form success messages
+	function contactFormSuccessEn() {
+	
+		jQuery('input, select').removeClass('error');
+		jQuery('.modal-frame').fadeOut(300);
+		jQuery('#contactFormEn').fadeOut().delay(4000).fadeIn();
+		// resetForm(jQuery('#contactFormEn'));
+		window.open('http://www.surveymonkey.com/s.aspx?sm=bcHAwWVHfdTBGMyjh1Vc5A%3d%3d', '', 'height=350,width=500,scrollbars=yes,resizable=yes,status=yes');
+		console.log('survey');
+	}
+
+	jQuery('form#contactFormFr').validate({
+		rules: {
+			fname: "defaultInvalid",
+			lname: "defaultInvalid",
+			address: "defaultInvalid",
+			store: "defaultInvalid",
+			phone: "defaultInvalid"
+		},
+		messages: {
+			fname: "S'il vous pla&icirc;t entrer votre pr&eacute;nom",
+			lname: "S'il vous pla&icirc;t remplir votre nom de famille",
+			phone: "S'il vous pla&icirc;t indiquer votre num&eacute;ro de t&eacute;l&eacute;phone",
+			address: "S'il vous pla&icirc;t, entrez votre adresse",
+			store: "S'il vous pla&icirc;t entrez votre num&eacute;ro de magasin"
+		},
+		onkeyup: false,
+		onfocusout: false,
+		onclick: false,
+		submitHandler: function(form){ 	
+			//Serialize the form data
+			var formData = jQuery('form#contactFormFr').serialize();
+			
+			//Send the form data to the script
+			jQuery.ajax({
+				type: 'POST',
+				url: seg1+seg2+seg3,
+				data: formData,
+				error: contactFormErrorFr,
+				success: contactFormSuccessFr
+			});
+			
+			//Stop the contactform from refreshing the page on submit
+			return false;			
+		}
+	});
+
+	function contactFormErrorFr() {
+		
+		return false;
+	
+	}
+	
+	//Contact form success messages
+	function contactFormSuccessFr() {
+	
+		jQuery('input, select').removeClass('error');
+		jQuery('.modal-frame').fadeOut(300);
+		jQuery('#contactFormFr').fadeOut().delay(4000).fadeIn();
+		resetForm(jQuery('#contactFormFr'));
+		
+	}
+
+
+
+
+
+
+
+	jQuery('.flexslider').flexslider({
+		namespace: "flex-",             //{NEW} String: Prefix string attached to the class of every element generated by the plugin
+		selector: ".slides > li",       //{NEW} Selector: Must match a simple pattern. '{container} > {slide}' -- Ignore pattern at your own peril
+		animation: "fade",              //String: Select your animation type, "fade" or "slide"
+		easing: "swing",               //{NEW} String: Determines the easing method used in jQuery transitions. jQuery easing plugin is supported!
+		direction: "horizontal",        //String: Select the sliding direction, "horizontal" or "vertical"
+		reverse: false,                 //{NEW} Boolean: Reverse the animation direction
+		animationLoop: true,             //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
+		smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode
+		startAt: 0,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
+		slideshow: true,                //Boolean: Animate slider automatically
+		slideshowSpeed: 7000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
+		animationSpeed: 600,            //Integer: Set the speed of animations, in milliseconds
+		initDelay: 0,                   //{NEW} Integer: Set an initialization delay, in milliseconds
+		randomize: false,               //Boolean: Randomize slide order
+		 
+		// Usability features
+		pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+		pauseOnHover: false,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
+		useCSS: true,                   //{NEW} Boolean: Slider will use CSS3 transitions if available
+		touch: true,                    //{NEW} Boolean: Allow touch swipe navigation of the slider on touch-enabled devices
+		video: false,                   //{NEW} Boolean: If using video in the slider, will prevent CSS3 3D Transforms to avoid graphical glitches
+		 
+		// Primary Controls
+		controlNav: false,               //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
+		directionNav: false,             //Boolean: Create navigation for previous/next navigation? (true/false)
+		prevText: "Previous",           //String: Set the text for the "previous" directionNav item
+		nextText: "Next",               //String: Set the text for the "next" directionNav item
+		 
+		// Secondary Navigation
+		keyboard: true,                 //Boolean: Allow slider navigating via keyboard left/right keys
+		multipleKeyboard: false,        //{NEW} Boolean: Allow keyboard navigation to affect multiple sliders. Default behavior cuts out keyboard navigation with more than one slider present.
+		mousewheel: false,              //{UPDATED} Boolean: Requires jquery.mousewheel.js (https://github.com/brandonaaron/jquery-mousewheel) - Allows slider navigating via mousewheel
+		pausePlay: false,               //Boolean: Create pause/play dynamic element
+		pauseText: 'Pause',             //String: Set the text for the "pause" pausePlay item
+		playText: 'Play',               //String: Set the text for the "play" pausePlay item
+		 
+		// Special properties
+		controlsContainer: "",          //{UPDATED} Selector: USE CLASS SELECTOR. Declare which container the navigation elements should be appended too. Default container is the FlexSlider element. Example use would be ".flexslider-container". Property is ignored if given element is not found.
+		manualControls: "",             //Selector: Declare custom control navigation. Examples would be ".flex-control-nav li" or "#tabs-nav li img", etc. The number of elements in your controlNav should match the number of slides/tabs.
+		sync: "",                       //{NEW} Selector: Mirror the actions performed on this slider with another slider. Use with care.
+		asNavFor: "",                   //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
+		 
+		// Carousel Options
+		itemWidth: 0,                   //{NEW} Integer: Box-model width of individual carousel items, including horizontal borders and padding.
+		itemMargin: 0,                  //{NEW} Integer: Margin between carousel items.
+		minItems: 0,                    //{NEW} Integer: Minimum number of carousel items that should be visible. Items will resize fluidly when below this.
+		maxItems: 0,                    //{NEW} Integer: Maxmimum number of carousel items that should be visible. Items will resize fluidly when above this limit.
+		move: 0,                        //{NEW} Integer: Number of carousel items that should move on animation. If 0, slider will move all visible items.
+		 
+		// Callback API
+		start: function(){},            //Callback: function(slider) - Fires when the slider loads the first slide
+		before: function(){},           //Callback: function(slider) - Fires asynchronously with each slider animation
+		after: function(){},            //Callback: function(slider) - Fires after each slider animation completes
+		end: function(){},              //Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous)
+		added: function(){},            //{NEW} Callback: function(slider) - Fires after a slide is added
+		removed: function(){}           //{NEW} Callback: function(slider) - Fires after a slide is removed	
+	});
+
+	
+	// Set up Annual Reports dropdown, if it exists
+	if (jQuery('#annualReportSelect').length != 0)
+	{
+		jQuery('#annualReportSelect').change(function()
+		{
+			if (jQuery('#annualReportSelect').val() != "")
+			{
+				window.location = jQuery('#annualReportSelect').val();
+			}
+		});
+	}	
+
+	
+	// Set up Annual Reports dropdown, if it exists
+	if (jQuery('#publicationsSelect').length != 0)
+	{
+		jQuery('#publicationsSelect').change(function()
+		{
+			if (jQuery('#publicationsSelect').val() != "")
+			{
+				window.location = jQuery('#publicationsSelect').val();
+			}
+		});
+	}
+
+});
+
+//clearInput function
+jQuery.fn.clearInput = function(){
+	return this.focus(function(){
+		if(this.value == this.defaultValue){
+			this.value = "";
+		}
+	}).blur(function(){
+		if(!this.value.length){
+			this.value = this.defaultValue;
+		}
+	});
+};
+
+
+
+// loadRecyclingData function: load data into page via JSON
+function loadRecyclingData(id, lang)
+{
+	if (id > 0)
+	{
+		console.log(id, lang);
+		jQuery.getJSON(
+			'/'+lang+'/recycling_data/' + id + '/',
+			null,
+			function(data, textStatus)
+			{
+				// Insert all location information
+				console.log(data.title);
+				jQuery('#contactInfo h4').html(data.title);
+				jQuery('#regionLocation').html(data.location);
+				jQuery('#regionAddress').html(data.address);
+				jQuery('#regionCity').html(data.city);
+				jQuery('#regionPostcode').html(data.postcode);
+				jQuery('#regionPhone').html(data.phone);
+				jQuery('#regionFax').html(data.fax);
+				jQuery('#regionEmail').html(data.email);
+				jQuery('#regionEmail').attr('href', 'mailto:' + data.email);
+				jQuery('#regionEmail').attr('title', data.email);
+				jQuery('#regionGeneralManager').html(data.general_manager);
+				jQuery('#regionChairperson').html(data.chairperson);
+				jQuery('#regionWeb').html(data.web);
+				jQuery('#regionWeb').attr('href', 'http://' + data.web);
+				jQuery('#regionWeb').attr('title', data.web);
+				
+				// Initialize the recycleTypes string and iterate through the various types to construct it
+				var recycleTypes = '';
+			
+				for (var i in data.recycalables)
+				{
+				
+					if (data.recycalables[i] != "")
+					{
+						recycleTypes += '<li class="' + i + '"><a href="#" title="' + data.recycalables[i][0] + '">' + data.recycalables[i][0] + '</a></li>';
+					}
+				}
+				
+				jQuery('#recycleTypes ul').html(recycleTypes);
+				
+				
+				jQuery('#recycleTypes a').click(function(event)
+				{
+					event.preventDefault();
+					
+					jQuery('#recycleTypes a').removeClass('active');
+					jQuery(this).addClass('active');
+					jQuery('#directions h3').html(jQuery(this).attr('title'));
+					jQuery('#recycleTypeInfo').html(data.recycalables[jQuery(this).parent().attr('class')][1]);
+					Cufon.replace('#directions h3', { fontFamily: 'CalvertMTStd' });
+					
+				});
+				
+				jQuery('#recycleTypes a').first().click();
+			}
+		);
+	
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+
+//clearForm function
+jQuery.fn.clearForm = function() {
+	return this.each(function() {
+		var type = this.type, tag = this.tagName.toLowerCase();
+		if (tag == 'form')
+			return jQuery(':input',this).clearForm();
+		if (type == 'text' || type == 'password' || tag == 'textarea')
+			this.value = '';
+		else if (type == 'checkbox' || type == 'radio')
+			this.checked = false;
+		else if (tag == 'select')
+			this.selectedIndex = -1;
+	});
+};

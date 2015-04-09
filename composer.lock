@@ -4,8 +4,205 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "24c3946acc997e3f3eca7fc5c99585b2",
+    "hash": "19155f2ef51a376aa034eaba5d4a775c",
     "packages": [
+        {
+            "name": "Tsawler/Vcms5",
+            "version": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:tsawler/vcms5.git",
+                "reference": "aa09973cdc826504702e94a16eaa127657395f40"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tsawler/vcms5/zipball/aa09973cdc826504702e94a16eaa127657395f40",
+                "reference": "aa09973cdc826504702e94a16eaa127657395f40",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*",
+                "intervention/image": "2.*",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [],
+                "psr-4": {
+                    "Tsawler\\Vcms5\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Trevor Sawler",
+                    "email": "trevor.sawler@me.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/tsawler/vcms5/tree/development",
+                "issues": "https://github.com/tsawler/vcms5/issues"
+            },
+            "time": "2015-04-06 22:49:40"
+        },
+        {
+            "name": "barryvdh/elfinder-builds",
+            "version": "v2.1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/elfinder-builds.git",
+                "reference": "5826d79edbeccf2a63404f7ca8e9ca66758fd762"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/elfinder-builds/zipball/5826d79edbeccf2a63404f7ca8e9ca66758fd762",
+                "reference": "5826d79edbeccf2a63404f7ca8e9ca66758fd762",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Levashov",
+                    "email": "dio@std42.ru",
+                    "homepage": "http://std42.ru"
+                },
+                {
+                    "name": "Troex Nevelin",
+                    "email": "troex@fury.scancode.ru",
+                    "homepage": "http://std42.ru"
+                },
+                {
+                    "name": "Naoki Sawada",
+                    "email": "hypweb@gmail.com",
+                    "homepage": "http://xoops.hypweb.net"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Studio-42/elFinder/contributors"
+                }
+            ],
+            "description": "File manager for web",
+            "homepage": "http://elfinder.org",
+            "time": "2015-02-11 11:10:51"
+        },
+        {
+            "name": "barryvdh/elfinder-flysystem-driver",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/elfinder-flysystem-driver.git",
+                "reference": "63649341e0e5417fd585fd1ada761282eed2ab02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/elfinder-flysystem-driver/zipball/63649341e0e5417fd585fd1ada761282eed2ab02",
+                "reference": "63649341e0e5417fd585fd1ada761282eed2ab02",
+                "shasum": ""
+            },
+            "require": {
+                "intervention/image": "~2.0",
+                "league/flysystem": "~1.0",
+                "php": ">=5.4"
+            },
+            "suggest": {
+                "barryvdh/elfinder-builds": "~2.1",
+                "league/glide": "~0.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "A Flysystem Driver for elFinder",
+            "keywords": [
+                "Flysystem",
+                "elfinder",
+                "filesystem"
+            ],
+            "time": "2015-01-28 13:33:19"
+        },
+        {
+            "name": "barryvdh/laravel-elfinder",
+            "version": "v0.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-elfinder.git",
+                "reference": "a4c0bba90b177b304a3fe442e9b8aba8ed251cea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-elfinder/zipball/a4c0bba90b177b304a3fe442e9b8aba8ed251cea",
+                "reference": "a4c0bba90b177b304a3fe442e9b8aba8ed251cea",
+                "shasum": ""
+            },
+            "require": {
+                "barryvdh/elfinder-builds": "2.1.x",
+                "barryvdh/elfinder-flysystem-driver": "0.1.x@dev",
+                "illuminate/support": "5.0.x",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Elfinder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "A Laravel Package to integrate elFinder 2",
+            "keywords": [
+                "elfinder",
+                "filebrowser",
+                "laravel",
+                "tinymce"
+            ],
+            "time": "2015-04-09 11:18:10"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "1.2.0",
@@ -223,6 +420,218 @@
             "time": "2014-12-20 21:24:13"
         },
         {
+            "name": "filp/whoops",
+            "version": "1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filp/whoops.git",
+                "reference": "c982fe62c44798c433229cb0425c61b487cc1883"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/c982fe62c44798c433229cb0425c61b487cc1883",
+                "reference": "c982fe62c44798c433229cb0425c61b487cc1883",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Whoops": "src/"
+                },
+                "classmap": [
+                    "src/deprecated"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filipe Dobreira",
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php error handling for cool kids",
+            "homepage": "https://github.com/filp/whoops",
+            "keywords": [
+                "error",
+                "exception",
+                "handling",
+                "library",
+                "silex-provider",
+                "whoops",
+                "zf2"
+            ],
+            "time": "2015-03-30 15:26:59"
+        },
+        {
+            "name": "francodacosta/phmagick",
+            "version": "0.4.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/francodacosta/phmagick.git",
+                "reference": "de24a768083a5efd922814fa855eee32bc1fab82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/francodacosta/phmagick/zipball/de24a768083a5efd922814fa855eee32bc1fab82",
+                "reference": "de24a768083a5efd922814fa855eee32bc1fab82",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "phmagick.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nuno Costa",
+                    "email": "nuno@francodacosta.com",
+                    "homepage": "http://www.francodacosta.com"
+                },
+                {
+                    "name": "Dustin Thomson",
+                    "email": "dthomson@51systems.com",
+                    "homepage": "http://www.51systems.com"
+                }
+            ],
+            "description": "image manipulation with php and ImageMagick",
+            "homepage": "http://www.phmagick.org",
+            "keywords": [
+                "ImageMagick",
+                "gd",
+                "image manipulation",
+                "image resize",
+                "imagick",
+                "resize",
+                "thumbnail"
+            ],
+            "time": "2013-09-23 12:47:11"
+        },
+        {
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "time": "2015-01-01 16:31:18"
+        },
+        {
+            "name": "intervention/image",
+            "version": "2.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "8f3761154b4c1f5128365dfc32cbf757f27d97b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/8f3761154b4c1f5128365dfc32cbf757f27d97b6",
+                "reference": "8f3761154b4c1f5128365dfc32cbf757f27d97b6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "3.*"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.net",
+                    "homepage": "http://olivervogel.net/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2015-03-18 17:41:04"
+        },
+        {
             "name": "ircmaxell/password-compat",
             "version": "v1.0.4",
             "source": {
@@ -349,6 +758,54 @@
                 }
             ],
             "time": "2014-07-14 20:59:35"
+        },
+        {
+            "name": "jenssegers/date",
+            "version": "v2.0.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/laravel-date.git",
+                "reference": "485208fc2c085be0449b9fb46abcf116d80daad2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/485208fc2c085be0449b9fb46abcf116d80daad2",
+                "reference": "485208fc2c085be0449b9fb46abcf116d80daad2",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "~1.0,<1.18",
+                "php": ">=5.3.0",
+                "symfony/translation": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Jenssegers\\Date": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "http://jenssegers.be"
+                }
+            ],
+            "description": "A date library to help you work with dates",
+            "keywords": [
+                "date",
+                "datetime",
+                "laravel",
+                "time"
+            ],
+            "time": "2015-03-26 22:43:43"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -736,21 +1193,20 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.18.0",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "99e2f69f7bdc2cc4334b2d00f1e0ba450623ea36"
+                "reference": "a1dd1ad9abfc8b3c4d8768068e6c71d293424e86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/99e2f69f7bdc2cc4334b2d00f1e0ba450623ea36",
-                "reference": "99e2f69f7bdc2cc4334b2d00f1e0ba450623ea36",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/a1dd1ad9abfc8b3c4d8768068e6c71d293424e86",
+                "reference": "a1dd1ad9abfc8b3c4d8768068e6c71d293424e86",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
-                "symfony/translation": "2.6.*"
+                "php": ">=5.3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -779,7 +1235,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2015-03-26 03:05:57"
+            "time": "2015-03-08 14:05:44"
         },
         {
             "name": "nikic/php-parser",
@@ -1698,6 +2154,44 @@
                 "dump"
             ],
             "time": "2015-03-31 08:12:29"
+        },
+        {
+            "name": "tsawler/laravel-filemanager",
+            "version": "0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tsawler/laravel-filemanager.git",
+                "reference": "d7afab2f4e964aaeaaa7f082df74e9b80154eada"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tsawler/laravel-filemanager/zipball/d7afab2f4e964aaeaaa7f082df74e9b80154eada",
+                "reference": "d7afab2f4e964aaeaaa7f082df74e9b80154eada",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*",
+                "intervention/image": "2.*",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tsawler\\Laravelfilemanager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Trevor Sawler",
+                    "email": "trevor.sawler@gmail.com"
+                }
+            ],
+            "description": "A file upload/editor intended for use with Laravel 5 and CKEditor",
+            "time": "2015-04-06 19:12:08"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -2822,7 +3316,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "francodacosta/phmagick": 20,
+        "tsawler/vcms5": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

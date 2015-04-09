@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/rnb', function(){
+   return View::make('rnb');
+});
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
