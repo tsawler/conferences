@@ -117,23 +117,9 @@
         <!-- LEFTCOL -->
         <div id="leftCol">
 
-            <h2>Moving Beyond Waste:</h2>
+            <h2>{!! $conference->title !!}</h2>
 
-            <h3>Waste Packaging and Printed Paper Forum</h3>
-
-            <h3>May 28, 2015 - Crowne Plaza Hotel, Fredericton</h3>
-
-            <p>Packaging and Printed Paper (PPP) make up a large portion of the residential waste stream in every
-                jurisdiction in Canada. Manitoba, Ontario, Quebec and British Columbia have packaging and printed paper
-                stewardship programs that industry finances.</p>
-
-            <p>At the Waste Packaging and Printed Paper Forum, you will learn about what a PPP program would mean for
-                municipalities in New Brunswick, funding models, and have an opportunity to talk to representatives from
-                provinces that have EPR programs for these products.</p>
-
-            <p>HOTEL: Crowne Plaza is holding guestrooms, at the government rate, until April 28, 2015. If you wish to
-                book a room call 1-866-444-1946.</p>
-            <hr>
+            {!! $conference->description !!}
 
             <br>
 

@@ -11,15 +11,20 @@
 |
 */
 
-Route::get('/', function(){
-   return View::make('rnb');
+Route::get('/', function ()
+{
+    $conference = \App\Conference::find(1);
+
+    return View::make('rnb')
+        ->with('conference', $conference);
 });
 
-Route::post('/register', function(){
-   return "will save form";
+Route::post('/register', function ()
+{
+    return "will save form";
 });
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+    'auth'     => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
 ]);
