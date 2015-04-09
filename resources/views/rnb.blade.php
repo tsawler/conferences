@@ -121,6 +121,8 @@
 
             {!! $conference->description !!}
 
+            <hr>
+
             <br>
 
             {!! Form::open(array(
