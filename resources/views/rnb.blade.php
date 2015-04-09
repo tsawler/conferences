@@ -117,7 +117,7 @@
         <!-- LEFTCOL -->
         <div id="leftCol">
 
-            <h2>{!! $conference->title !!}</h2>
+            <h2>{!! $conference->conference_name !!}</h2>
 
             {!! $conference->description !!}
 
