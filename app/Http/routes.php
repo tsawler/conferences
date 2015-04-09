@@ -15,6 +15,9 @@ Route::get('/', function(){
    return View::make('rnb');
 });
 
+Route::post('/register', function(){
+   return "will save form";
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

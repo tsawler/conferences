@@ -137,7 +137,14 @@
 
             <br>
 
-            <form method="post" name="regform" id="regform">
+            {!! Form::open(array(
+                'url' => '/register',
+                'role' => 'form',
+                'name' => 'regform',
+                'id' => 'regform',
+                'method' => 'post'
+                ))
+                !!}
 
                 <fieldset>
                     <legend>Registration Information</legend>
@@ -197,19 +204,13 @@
                         </select>
                     </label>
 
-                    {{--<label for="regional_commission">Regional Service Commission<br>--}}
-                        {{--<select name="regional_commission">--}}
-                            {{--<option value="">N/A</option>--}}
-                        {{--</select>--}}
-                    {{--</label>--}}
-
                 </fieldset>
 
                 <hr>
                 <p>You may wish to review our <a href="">privacy policy</a>. We will never share
                     your personal information with a third party, and only use it to organize the conference.</p>
                 <button>Submit Registration</button>
-            </form>
+            {!! Form::close() !!}
 
         </div>
         <!-- /LEFTCOL -->
