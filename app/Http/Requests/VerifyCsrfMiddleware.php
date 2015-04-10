@@ -18,7 +18,7 @@ class VerifyCsrfMiddleware extends \Illuminate\Foundation\Http\Middleware\Verify
     protected function excludedRoutes($request)
     {
         $routes = [
-            'queue/push'
+            '/queue/push'
         ];
 
         foreach($routes as $route)
