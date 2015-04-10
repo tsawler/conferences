@@ -20,7 +20,8 @@
         "tsawler/vcms5": "dev-development",
         "tsawler/laravel-filemanager": "0.5.*",
         "filp/whoops": "~1.0",
-        "guzzlehttp/guzzle": "~4.0"
+        "guzzlehttp/guzzle": "~4.0",
+        "iron-io/iron_mq": "1.5.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
