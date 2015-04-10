@@ -2,7 +2,7 @@
 
 use Closure;
 
-class VerifyCsrfToken extends \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken {
+class VerifyCsrfMiddleware extends \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken {
 
     public function handle($request, Closure $next)
     {
