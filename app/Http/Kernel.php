@@ -17,7 +17,7 @@ class Kernel extends HttpKernel {
         'Illuminate\View\Middleware\ShareErrorsFromSession',
         'App\Http\Middleware\VerifyCsrfToken',
         'Tsawler\Vcms5\Middleware\SetLanguageMiddleware',
-        'App\Http\Middleware\VerifyCsrfToken'
+        'App\Http\Middleware\VerifyCsrfMiddleware'
     ];
 
     /**
