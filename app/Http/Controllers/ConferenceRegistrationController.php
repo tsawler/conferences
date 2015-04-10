@@ -51,7 +51,7 @@ class ConferenceRegistrationController extends Controller {
         $registration->save();
 
 
-        return "done";
+        return View::make('thanks');
 
     }
 
