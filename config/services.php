@@ -15,8 +15,8 @@ return [
 	*/
 
 	'mailgun' => [
-		'domain' => '',
-		'secret' => '',
+		'domain' => 'dogearedpress.ca',
+		'secret' => 'key-16ixangbykk-w9wewopb2cgs-2kgmpz7',
 	],
 
 	'mandrill' => [

@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['info@recyclenb.com' => null, 'Recycle NB' => null],
 
 	/*
 	|--------------------------------------------------------------------------

@@ -4,6 +4,7 @@ use App\Conference;
 use App\ConferenceRegistrant;
 use App\Http\Requests\ConferenceRegistrationRequest;
 use App\Http\Requests\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
 
@@ -49,6 +50,20 @@ class ConferenceRegistrationController extends Controller {
         $registration->phone = Input::get('phone');
         $registration->commission_id = Input::get('commission_id');
         $registration->save();
+
+        $user_data = array(
+            'email'      => Input::get('email'),
+        );
+
+        // the data that will be passed into the mail view blade template
+        $data = array();
+
+        // use Mail::send function to send email passing the data and using the $user variable in the closure
+        Mail::queue('emails.confirmation-email', $data, function ($message) use ($user_data)
+        {
+            $message->from('info@recyclenb.com', 'Recycle NB');
+            $message->to($user_data['email'])->subject('Registration Recieved');
+        });
 
 
         return View::make('thanks');
