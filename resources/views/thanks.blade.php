@@ -79,7 +79,7 @@
 
 <!-- WRAPPER -->
 <div id="container">
-    <div id="wrapper" class="clearfix  ">
+    <div id="wrapper" class="clearfix">
 
 
         <!-- LEFTCOL -->
