@@ -127,7 +127,6 @@
 
             {!! Form::open(array(
                 'url' => '/register',
-                'role' => 'form',
                 'name' => 'regform',
                 'id' => 'regform',
                 'method' => 'post'
