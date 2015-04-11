@@ -44,7 +44,6 @@
 <!-- HEADER -->
 <div id="header">
 
-
     <!-- LANGUAGE -->
     <div id="language">
         <p><a href="http://www.recyclenb.com/en/fr/" title="Fran&ccedil;ais">Fran&ccedil;ais</a></p>
@@ -73,14 +72,12 @@
     <a href="http://www.recyclenb.com/en/kids/" title="Kids Page" class="kids">Kids Page</a>
     <!-- /KIDSPAGE -->
 
-
 </div>
 <!-- /HEADER -->
 
 <!-- WRAPPER -->
 <div id="container">
     <div id="wrapper" class="clearfix">
-
 
         <!-- LEFTCOL -->
         <div id="leftCol">
@@ -177,7 +174,6 @@
         </div>
         <!-- /SIDEBAR -->
 
-
     </div>
 </div>
 <!-- /WRAPPER -->
@@ -240,8 +236,6 @@
 
         <!-- COPYRIGHT -->
         <p class="copyright">&copy; 2015 Recycle NB</p>
-
-
         <!-- /COPYRIGHT -->
 
     </div>
