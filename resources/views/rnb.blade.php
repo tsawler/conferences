@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head profile="http://gmpg.org/xfn/11">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -105,43 +105,43 @@
                     <legend>Registration Information</legend>
                     <br>
                     <label for="title">Title<br>
-                        <input type="text" name="title" class="required">
+                        <input type="text" id="title" name="title" class="required">
                     </label>
 
                     <label for="first_name">First Name<br>
-                        <input type="text" name="first_name" class="required">
+                        <input type="text" id="first_name" name="first_name" class="required">
                     </label>
 
                     <label for="last_name">Last Name<br>
-                        <input type="text" name="last_name" class="required">
+                        <input type="text" id="last_name" name="last_name" class="required">
                     </label>
 
                     <label for="company">Company/Organization<br>
-                        <input type="text" name="company" class="required">
+                        <input type="text" id="company" name="company" class="required">
                     </label>
 
                     <label for="email">Email address<br>
-                        <input type="email" name="email" class="required email">
+                        <input type="email" id="email" name="email" class="required email">
                     </label>
 
                     <label for="address">Mailing address<br>
-                        <input type="text" name="address" class="required">
+                        <input type="text" id="address" name="address" class="required">
                     </label>
 
                     <label for="city">City/Town<br>
-                        <input type="text" name="city" class="required">
+                        <input type="text" id="city" name="city" class="required">
                     </label>
 
                     <label for="zip">Postal Code<br>
-                        <input type="text" name="zip" class="required">
+                        <input type="text" id="zip" name="zip" class="required">
                     </label>
 
                     <label for="phone">Phone<br>
-                        <input type="text" name="phone" class="required">
+                        <input type="text" id="phone" name="phone" class="required">
                     </label>
 
                     <label for="commission_id">Regional Service Commission<br>
-                        <select name="commission_id">
+                        <select id="commission_id" name="commission_id">
                             <option value="0">N/A</option>
                             <option value="1">Northwest Regional Service Commission</option>
                             <option value="2">Restigouche Regional Service Commission //option>
@@ -173,7 +173,6 @@
 
         <!-- SIDEBAR -->
         <div id="sidebar">
-
 
         </div>
         <!-- /SIDEBAR -->
