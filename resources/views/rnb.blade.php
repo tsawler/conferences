@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- METATAGS -->
-    <title>Welcome - Recycle NB</title>
+    <title>Recycle NB — Moving Beyond Waste: Waste Packaging and Printed Paper Forum</title>
 
     <meta name='description' content=''>
     <meta name='keywords' content=''>
