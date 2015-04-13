@@ -36,8 +36,8 @@
             width: 50%;
         }
     </style>
-
 </head>
+
 <body class="homepage">
 
 <!-- HEADER -->
@@ -50,7 +50,6 @@
         <p><a href="http://www.recyclenb.com/en/boardmembers/" title="Login">Login</a></p>
     </div>
     <!-- /LANGUAGE -->
-
 
     <!-- LOGO -->
     <a href="http://www.recyclenb.com/en/" title="Recycle NB" id="logo">Recycle NB</a>
@@ -137,8 +136,8 @@
                     </label>
 
                     <label for="commission_id">Regional Service Commission<br>
-                        <select id="commission_id" name="commission_id">
-                            <option value="0">N/A</option>
+                        <select id="commission_id" name="commission_id" class="required">
+                            <option value="">N/A</option>
                             <option value="1">Northwest Regional Service Commission</option>
                             <option value="2">Restigouche Regional Service Commission //option>
                             <option value="3">Chaleur Regional Service Commission</option>
