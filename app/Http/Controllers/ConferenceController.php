@@ -5,8 +5,15 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
 
+/**
+ * Class ConferenceController
+ * @package App\Http\Controllers
+ */
 class ConferenceController extends Controller {
 
+    /**
+     * @return mixed
+     */
     public function getConferenceRegistrants()
     {
         $registrants = ConferenceRegistrant::orderBy('last_name')->get();
@@ -16,6 +23,9 @@ class ConferenceController extends Controller {
     }
 
 
+    /**
+     * @return mixed
+     */
     public function getRegistrant()
     {
         $commissions = [
@@ -40,6 +50,11 @@ class ConferenceController extends Controller {
             ->with('commissions', $commissions);
     }
 
+
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
     public function getDeleteRegistrant()
     {
         ConferenceRegistrant::find(Input::get('id'))->delete();
