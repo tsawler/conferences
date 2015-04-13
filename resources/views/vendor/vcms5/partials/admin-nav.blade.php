@@ -41,6 +41,22 @@
                     <span class="fa arrow"></span></a>
             </li>
 
+            @if (Auth::user()->hasRole('conferences'))
+                @if (Request::segment(2) == 'conferences')
+                    <li class='active'>
+                @else
+                    <li>
+                @endif
+                    <a href="#"><i class="fa fa-lightbulb-o"></i> <span class="nav-label">Conferences</span><span
+                                class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/admin/conferences/all-registrations">All Registrations</a></li>
+                        <li><a href="/admin/conferences/all-invitees">All Invitees</a></li>
+                        <li><a href="/admin/conferences/print-badges">Print Badges</a></li>
+                    </ul>
+                </li>
+            @endif
+
             @if (Auth::user()->hasRole('pages'))
                 @if (Request::segment(2) == 'page')
                     <li class='active'>
