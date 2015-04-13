@@ -8,6 +8,23 @@ Route::post('/queue/push', function ()
     return Queue::marshal();
 });
 
+Route::group(array('middleware' => 'auth'), function () // make sure authenticated
+{
+    Route:: group(array('middleware' => 'auth.admin'), function () // make sure admin
+    {
+
+        Route:: group(array('middleware' => 'auth.conferences'), function () // make sure admin
+        {
+            // conferences
+            Route::get('/admin/conferences/all-registrations', 'ConferenceController@getConferenceRegistrants');
+            Route::get('/admin/conferences/registrant', 'ConferenceController@getRegistrant');
+            Route::get('/admin/conferences/delete-registrant', 'ConferenceController@getDeleteRegistrant');
+            Route::get('/admin/conferences/all-invitees', '\Tsawler\Vcms5\controllers\VcmsMenuController@getDdmenujson');
+            Route::get('/admin/conferences/print-badges', '\Tsawler\Vcms5\controllers\VcmsMenuController@getDdmenujson');
+        });
+    });
+});
+
 // here we wrap our package controllers in a namespace so we can call them directly
 Route::group(['namespace' => 'App\Http\Controllers'], function ()
 {
@@ -16,15 +33,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     {
         Route:: group(array('middleware' => 'auth.admin'), function () // make sure admin
         {
-
-            Route:: group(array('middleware' => 'auth.conferences'), function () // make sure admin
-            {
-                // conferences
-                Route::get('/admin/conferences/all-registrations', '\Tsawler\Vcms5\controllers\VcmsMenuController@getMenujson');
-                Route::get('/admin/conferences/all-invitees', '\Tsawler\Vcms5\controllers\VcmsMenuController@getDdmenujson');
-                Route::get('/admin/conferences/print-badges', '\Tsawler\Vcms5\controllers\VcmsMenuController@getDdmenujson');
-            });
-
             Route:: group(array('middleware' => 'auth.pages'), function () // make sure admin
             {
                 // pages

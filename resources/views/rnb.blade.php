@@ -139,7 +139,7 @@
                         <select id="commission_id" name="commission_id" class="required">
                             <option value="">N/A</option>
                             <option value="1">Northwest Regional Service Commission</option>
-                            <option value="2">Restigouche Regional Service Commission //option>
+                            <option value="2">Restigouche Regional Service Commission </option>
                             <option value="3">Chaleur Regional Service Commission</option>
                             <option value="4">Acadian Peninsula Regional Service Commission</option>
                             <option value="5">Greater Miramichi Regional Service Commission</option>
