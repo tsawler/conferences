@@ -4,7 +4,6 @@ use App\Commission;
 use App\Conference;
 use App\ConferenceRegistrant;
 use App\Http\Requests\ConferenceRegistrationRequest;
-use App\Http\Requests\Request;
 use App\Invitee;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
