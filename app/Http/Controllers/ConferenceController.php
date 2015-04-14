@@ -66,6 +66,22 @@ class ConferenceController extends Controller {
     }
 
 
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
+    public function getDeleteInvitee()
+    {
+        Invitee::find(Input::get('id'))->delete();
+
+        return Redirect::to('/admin/conferences/all-invitees');
+
+    }
+
+
+    /**
+     * @return mixed
+     */
     public function getEditRegistrant()
     {
         $registrant = ConferenceRegistrant::find(Input::get('id'));
@@ -75,6 +91,10 @@ class ConferenceController extends Controller {
     }
 
 
+    /**
+     * @param ConferenceRegistrationRequest $request
+     * @return mixed
+     */
     public function postEditRegistrant(ConferenceRegistrationRequest $request)
     {
 
@@ -98,6 +118,9 @@ class ConferenceController extends Controller {
     }
 
 
+    /**
+     * @return mixed
+     */
     public function getInvitees()
     {
         $invitees = Invitee::orderBy('last_name')->get();
@@ -107,6 +130,9 @@ class ConferenceController extends Controller {
     }
 
 
+    /**
+     * @return mixed
+     */
     public function getEditInvitee()
     {
         $invitee = Invitee::find(Input::get('id'));
@@ -116,6 +142,9 @@ class ConferenceController extends Controller {
     }
 
 
+    /**
+     * @return mixed
+     */
     public function postEditInvitee()
     {
         $invitee = Invitee::find(Input::get('id'));

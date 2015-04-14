@@ -23,6 +23,7 @@ Route::group(array('middleware' => 'auth'), function () // make sure authenticat
             Route::post('/admin/conferences/edit-registrant', 'ConferenceController@postEditRegistrant');
             Route::post('/admin/conferences/edit-invitee', 'ConferenceController@postEditInvitee');
             Route::get('/admin/conferences/delete-registrant', 'ConferenceController@getDeleteRegistrant');
+            Route::get('/admin/conferences/delete-invitee', 'ConferenceController@getDeleteInvitee');
             Route::get('/admin/conferences/all-invitees', 'ConferenceController@getInvitees');
             Route::get('/admin/conferences/print-badges', '\Tsawler\Vcms5\controllers\VcmsMenuController@getDdmenujson');
         });
