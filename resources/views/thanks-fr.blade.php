@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name='description' content=''>
-    <meta name='keywords' content=''>
-    <meta name='robots' content='index,follow,archive'>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head profile="http://gmpg.org/xfn/11">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <!-- METATAGS -->
     <title>Recycle NB</title>
@@ -77,7 +73,15 @@
 
 <!-- WRAPPER -->
 <div id="container">
-    <div id="wrapper" class="clearfix  ">
+    <div id="wrapper">
+
+        <h2>Merçi</h2>
+
+        <p>
+            Merci pour votre inscription au Forum AU-DELÀ DES DÉCHETS – Déchets d’emballages et de papier imprimé. Pour toute question au sujet du forum, veuillez communiquer avec nous au 506-454-8473 ou par courriel à <a href="mailto:info@recyclenb.com">info@recyclenb.com</a>. Nous nous réjouissons d’avance de votre participation à ce forum.
+        </p>
+
+
 
         <!-- LEFTCOL -->
         <div id="leftCol">
@@ -85,79 +89,6 @@
 
             <!-- CONTENT -->
             <div id="content">
-
-        <h2>{!! $conference->conference_name_fr !!}</h2>
-
-        {!! $conference->description_fr !!}
-
-        <hr>
-
-        <br>
-
-        {!! Form::open(array(
-        'url' => '/register',
-        'name' => 'regform',
-        'id' => 'regform',
-        'method' => 'post'
-        ))
-        !!}
-
-        <fieldset>
-            <legend>Renseignements sur l'inscription</legend>
-            <br>
-            <label for="title">Titre<br>
-                <input type="text" id="title" name="title" class="required">
-            </label>
-
-            <label for="first_name">Prénom<br>
-                <input type="text" id="first_name" name="first_name" class="required">
-            </label>
-
-            <label for="last_name">Nom<br>
-                <input type="text" id="last_name" name="last_name" class="required">
-            </label>
-
-            <label for="company">Entreprise ou organisme<br>
-                <input type="text" id="company" name="company" class="required">
-            </label>
-
-            <label for="email">Courriel<br>
-                <input type="email" id="email" name="email" class="required email">
-            </label>
-
-            <label for="address">Addresse<br>
-                <input type="text" id="address" name="address" class="required">
-            </label>
-
-            <label for="city">City/Town<br>
-                <input type="text" id="city" name="city" class="required">
-            </label>
-
-            <label for="zip">Code postal<br>
-                <input type="text" id="zip" name="zip" class="required">
-            </label>
-
-            <label for="phone">T&eacute;l&eacute;phone<br>
-                <input type="text" id="phone" name="phone" class="required">
-            </label>
-
-            <label for="commission_id">Commissions de services régionaux<br>
-                {!! Form::select('commission_id', $commissions,
-                null) !!}
-            </label>
-
-        </fieldset>
-
-        <hr>
-
-        <p>Vous pouvez consulter notre <a href="">politique de confidentialité</a> . Nous ne allons jamais partager
-            vos informations personnelles avec un tiers et ne l'utiliser pour organiser la conférence .</p>
-        <button>Soumettre</button>
-        <input type="hidden" name="conference_id" value="1">
-        {!! Form::close() !!}
-
-
-
 
 
 

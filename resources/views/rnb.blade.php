@@ -75,8 +75,12 @@
 
 <!-- WRAPPER -->
 <div id="container">
-    <div id="wrapper">
+    <div id="wrapper" class="clearfix  ">
 
+        <!-- LEFTCOL -->
+        <div id="leftCol">
+
+            <div id="content">
 
             <h2>{!! $conference->conference_name !!}</h2>
 
@@ -135,7 +139,7 @@
 
             <label for="commission_id">Regional Service Commission<br>
                 {!! Form::select('commission_id', $commissions,
-                null) !!}
+                null, ['id' => 'commission_id']) !!}
             </label>
 
         </fieldset>
@@ -144,13 +148,13 @@
         <p>You may wish to review our <a href="">privacy policy</a>. We will never share
             your personal information with a third party, and only use it to organize the conference.</p>
         <button>Submit Registration</button>
-                <input type="hidden" name="conference_id" value="1">
+
+        <input type="hidden" name="conference_id" value="1">
             {!! Form::close() !!}
 
-        <!-- LEFTCOL -->
-        <div id="leftCol">
 
-            <div id="content"></div>
+
+            </div>
         </div>
         <!-- /LEFTCOL -->
 

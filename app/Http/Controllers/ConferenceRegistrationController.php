@@ -71,7 +71,7 @@ class ConferenceRegistrationController extends Controller {
         $registration->save();
 
         $user_data = array(
-            'email'      => Input::get('email'),
+            'email' => Input::get('email'),
         );
 
         // the data that will be passed into the mail view blade template
@@ -85,7 +85,42 @@ class ConferenceRegistrationController extends Controller {
         });
 
 
-        return View::make('thanks');
+        if (Session::get('lang') == 'fr')
+        {
+            $user_data = array(
+                'email' => Input::get('email'),
+            );
+
+            // the data that will be passed into the mail view blade template
+            $data = array();
+
+            // use Mail::send function to send email passing the data and using the $user variable in the closure
+            Mail::queue('emails.confirmation-email-fr', $data, function ($message) use ($user_data)
+            {
+                $message->from('info@recyclenb.com', 'Recycle NB');
+                $message->to($user_data['email'])->subject('Registration Received');
+            });
+
+            return View::make('thanks-fr');
+        } else
+        {
+            $user_data = array(
+                'email' => Input::get('email'),
+            );
+
+            // the data that will be passed into the mail view blade template
+            $data = array();
+
+            // use Mail::send function to send email passing the data and using the $user variable in the closure
+            Mail::queue('emails.confirmation-email', $data, function ($message) use ($user_data)
+            {
+                $message->from('info@recyclenb.com', 'Recycle NB');
+                $message->to($user_data['email'])->subject('Registration Received');
+            });
+
+            return View::make('thanks');
+        }
+
 
     }
 
