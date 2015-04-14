@@ -70,18 +70,15 @@ class ConferenceRegistrationController extends Controller {
         $registration->commission_id = Input::get('commission_id');
         $registration->save();
 
-        $user_data = array(
-            'email' => Input::get('email'),
-        );
-
         // the data that will be passed into the mail view blade template
-        $data = array();
+        $data = array('name' => Input::get('first_name') . " " . Input::get('last_name'));
 
         // use Mail::send function to send email passing the data and using the $user variable in the closure
-        Mail::queue('emails.confirmation-email', $data, function ($message) use ($user_data)
+        Mail::queue('emails.notification-email', $data, function ($message)
         {
             $message->from('info@recyclenb.com', 'Recycle NB');
-            $message->to($user_data['email'])->subject('Registration Recieved');
+//            $message->to('info@crecyclenb.com')->subject('Conference Registration Recieved');
+            $message->to('trevor.sawler@gmail.com')->subject('Conference Registration Recieved');
         });
 
 
