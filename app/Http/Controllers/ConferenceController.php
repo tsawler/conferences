@@ -181,6 +181,9 @@ class ConferenceController extends Controller {
     }
 
 
+    /**
+     * Export registrants to Excel
+     */
     public function getExportRegistrantsToExcel()
     {
         $query = "select r.title, r.last_name, r.first_name, c.commission_name, r.company, r.email, r.address, "
