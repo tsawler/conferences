@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+
 class PublicPagesTest extends TestCase {
 
     /**
@@ -23,6 +25,45 @@ class PublicPagesTest extends TestCase {
     {
         $this->call('GET', '/dasfasfdasfdasfdsafdasfa');
         $this->assertResponseStatus(404);
+    }
+
+
+    /**
+     * Test for login page
+     *
+     * @return void
+     */
+    public function testLoginPage()
+    {
+        $this->call('GET', '/login');
+        $this->assertResponseOk();
+    }
+
+
+    /**
+     * Test access to admin without login
+     *
+     * @return void
+     */
+    public function test302()
+    {
+        $this->call('GET', '/admin/dashboard');
+        $this->assertResponseStatus(302);
+    }
+
+
+    /**
+     * Test calling logout page
+     */
+    public function testLogout()
+    {
+        $user = User::find(1);
+        $this->be($user);
+
+        $this->call('GET', '/admin/logout');
+        $this->assertResponseStatus(302);
+        $this->assertRedirectedTo('/login');
+        $this->assertSessionHas('message');
     }
 
 }
