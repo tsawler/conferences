@@ -92,7 +92,6 @@ class ConferenceRegistrationController extends Controller {
         {
             $message->from('info@recyclenb.com', 'Recycle NB');
             $message->to('info@crecyclenb.com')->subject('Conference Registration Recieved');
-//            $message->to('trevor.sawler@gmail.com')->subject('Conference Registration Recieved');
         });
 
 
