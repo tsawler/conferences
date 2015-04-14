@@ -140,7 +140,6 @@ class ConferenceRegistrationController extends Controller {
             return View::make('thanks');
         }
 
-
     }
 
 
