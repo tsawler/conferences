@@ -129,7 +129,7 @@
                 <input type="text" id="address" name="address" class="required">
             </label>
 
-            <label for="city">City/Town<br>
+            <label for="city">Cité/Ville<br>
                 <input type="text" id="city" name="city" class="required">
             </label>
 

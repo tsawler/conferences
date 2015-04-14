@@ -95,7 +95,7 @@ class ConferenceRegistrationController extends Controller {
             Mail::queue('emails.confirmation-email-fr', $data, function ($message) use ($user_data)
             {
                 $message->from('info@recyclenb.com', 'Recycle NB');
-                $message->to($user_data['email'])->subject('Registration Received');
+                $message->to($user_data['email'])->subject('Inscription reçue');
             });
 
             return View::make('thanks-fr');
