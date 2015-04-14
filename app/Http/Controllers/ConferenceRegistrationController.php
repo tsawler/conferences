@@ -6,6 +6,7 @@ use App\ConferenceRegistrant;
 use App\Http\Requests\ConferenceRegistrationRequest;
 use App\Http\Requests\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
 
@@ -38,9 +39,17 @@ class ConferenceRegistrationController extends Controller {
             $commissions[$commission->id] = $commission->commission_name;
         }
 
-        return View::make('rnb')
-            ->with('conference', $conference)
-            ->with('commissions', $commissions);
+        if (Session::get('lang') == 'en')
+        {
+            return View::make('rnb')
+                ->with('conference', $conference)
+                ->with('commissions', $commissions);
+        } else
+        {
+            return View::make('rnb-fr')
+                ->with('conference', $conference)
+                ->with('commissions', $commissions);
+        }
     }
 
 

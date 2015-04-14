@@ -38,6 +38,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::get('/admin/login', '\Tsawler\Vcms5\controllers\VcmsLoginController@getLogin');
     Route::post('/admin/login', '\Tsawler\Vcms5\controllers\VcmsLoginController@postLogin');
 
+    Route::get('/changelanguage', '\Tsawler\Vcms5\controllers\VcmsLanguageController@getChangeLanguage');
+
+
     Route::group(array('middleware' => 'auth'), function () // make sure authenticated
     {
         Route:: group(array('middleware' => 'auth.admin'), function () // make sure admin

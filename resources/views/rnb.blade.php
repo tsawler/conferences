@@ -45,7 +45,7 @@
 
     <!-- LANGUAGE -->
     <div id="language">
-        <p><a href="http://www.recyclenb.com/en/fr/" title="Fran&ccedil;ais">Fran&ccedil;ais</a></p>
+        <p><a href="/changelanguage?lang=fr&amp;url={!! URL::current() !!}" title="Fran&ccedil;ais">Fran&ccedil;ais</a></p>
 
         <p><a href="http://www.recyclenb.com/en/boardmembers/" title="Login">Login</a></p>
     </div>
@@ -75,10 +75,8 @@
 
 <!-- WRAPPER -->
 <div id="container">
-    <div id="wrapper" class="clearfix">
+    <div id="wrapper">
 
-        <!-- LEFTCOL -->
-        <div id="leftCol">
 
             <h2>{!! $conference->conference_name !!}</h2>
 
@@ -149,6 +147,10 @@
                 <input type="hidden" name="conference_id" value="1">
             {!! Form::close() !!}
 
+        <!-- LEFTCOL -->
+        <div id="leftCol">
+
+            <div id="content"></div>
         </div>
         <!-- /LEFTCOL -->
 
