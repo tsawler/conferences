@@ -73,7 +73,14 @@
 
 <!-- WRAPPER -->
 <div id="container">
-    <div id="wrapper">
+    <div id="wrapper" class="clearfix ">
+
+        <!-- LEFTCOL -->
+        <div id="leftCol">
+
+
+            <!-- CONTENT -->
+            <div id="content">
 
         <h2>Merçi</h2>
 
@@ -83,12 +90,7 @@
 
 
 
-        <!-- LEFTCOL -->
-        <div id="leftCol">
 
-
-            <!-- CONTENT -->
-            <div id="content">
 
 
 
