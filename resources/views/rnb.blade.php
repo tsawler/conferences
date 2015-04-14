@@ -137,7 +137,7 @@
 
                     <label for="commission_id">Regional Service Commission<br>
                         <select id="commission_id" name="commission_id" class="required">
-                            <option value="">N/A</option>
+                            <option value="0">N/A</option>
                             <option value="1">Northwest Regional Service Commission</option>
                             <option value="2">Restigouche Regional Service Commission </option>
                             <option value="3">Chaleur Regional Service Commission</option>

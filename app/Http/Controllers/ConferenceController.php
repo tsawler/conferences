@@ -4,6 +4,7 @@ use App\ConferenceRegistrant;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
+use App\Http\Requests\ConferenceRegistrationRequest;
 
 /**
  * Class ConferenceController
@@ -58,6 +59,38 @@ class ConferenceController extends Controller {
     public function getDeleteRegistrant()
     {
         ConferenceRegistrant::find(Input::get('id'))->delete();
+
+        return Redirect::to('/admin/conferences/all-registrations');
+
+    }
+
+
+    public function getEditRegistrant()
+    {
+        $registrant = ConferenceRegistrant::find(Input::get('id'));
+
+        return View::make("vcms5::custom.edit-conference-registrant")
+            ->with('registrant', $registrant);
+    }
+
+
+    public function postEditRegistrant(ConferenceRegistrationRequest $request)
+    {
+
+        $registration =  ConferenceRegistrant::find(Input::get('id'));
+
+        $registration->conference_id = Input::get('conference_id');
+        $registration->title = Input::get('title');
+        $registration->first_name = Input::get('first_name');
+        $registration->last_name = Input::get('last_name');
+        $registration->company = Input::get('company');
+        $registration->email = Input::get('email');
+        $registration->address = Input::get('address');
+        $registration->city = Input::get('city');
+        $registration->zip = Input::get('zip');
+        $registration->phone = Input::get('phone');
+        $registration->commission_id = Input::get('commission_id');
+        $registration->save();
 
         return Redirect::to('/admin/conferences/all-registrations');
 

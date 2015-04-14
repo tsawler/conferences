@@ -78,7 +78,7 @@
                 <hr>
 
                 <button class="btn btn-danger" onclick="deleteRegistrant()">Delete</button>
-
+                <a href="/admin/conferences/edit-registrant?id={!! $registrant->id !!}" class="btn btn-info">Edit</a>
             </div>
         </div>
     </div>
