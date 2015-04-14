@@ -146,7 +146,7 @@
 
         <hr>
 
-                <p>You may wish to review our <a href="">privacy policy</a>. We will never share
+                <p>You may wish to review our <a href="/privacy">privacy policy</a>. We will never share
             your personal information with a third party, and only use it to organize the conference.</p>
         <button>Submit Registration</button>
 

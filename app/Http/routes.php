@@ -8,6 +8,10 @@ Route::post('/queue/push', function ()
     return Queue::marshal();
 });
 
+Route::get('/privacy', function(){
+   return View::make('privacy');
+});
+
 
 Route::group(array('middleware' => 'auth'), function () // make sure authenticated
 {

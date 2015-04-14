@@ -150,7 +150,7 @@
 
         <hr>
 
-        <p>Vous pouvez consulter notre <a href="">politique de confidentialité</a> . Nous ne allons jamais partager
+        <p>Vous pouvez consulter notre <a href="/privacy">politique de confidentialité</a> . Nous ne allons jamais partager
             vos informations personnelles avec un tiers et ne l'utiliser pour organiser la conférence .</p>
         <button>Soumettre</button>
         <input type="hidden" name="conference_id" value="1">
