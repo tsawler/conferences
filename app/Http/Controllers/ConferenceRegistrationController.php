@@ -110,6 +110,7 @@ class ConferenceRegistrationController extends Controller {
             {
                 $message->from('info@recyclenb.com', 'Recycle NB');
                 $message->to($user_data['email'])->subject('Inscription reçue');
+                $message->attach(public_path() . "/agendas/agenda_fr.pdf");
             });
 
             return View::make('thanks-fr');
@@ -127,6 +128,7 @@ class ConferenceRegistrationController extends Controller {
             {
                 $message->from('info@recyclenb.com', 'Recycle NB');
                 $message->to($user_data['email'])->subject('Registration Received');
+                $message->attach(public_path() . "/agendas/agenda_en.pdf");
             });
 
             return View::make('thanks');
