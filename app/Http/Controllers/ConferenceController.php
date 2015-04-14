@@ -158,8 +158,8 @@ class ConferenceController extends Controller {
         $invitee->fax = Input::get('fax');
         $invitee->band = Input::get('band');
         $invitee->invite_type = Input::get('invite_type');
+        $invitee->commission_id = Input::get('commission_id');
         $invitee->save();
-
 
         return Redirect::to('/admin/conferences/all-invitees');
     }
