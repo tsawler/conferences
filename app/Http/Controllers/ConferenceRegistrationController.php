@@ -5,6 +5,7 @@ use App\Conference;
 use App\ConferenceRegistrant;
 use App\Http\Requests\ConferenceRegistrationRequest;
 use App\Http\Requests\Request;
+use App\Invitee;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
@@ -69,6 +70,19 @@ class ConferenceRegistrationController extends Controller {
         $registration->phone = Input::get('phone');
         $registration->commission_id = Input::get('commission_id');
         $registration->save();
+
+        // check to see if this registration has been received from an invitee
+        $invites = Invitee::where('last_name', 'like', Input::get('last_name') . "%")
+            ->where('first_name', 'like', Input::get('first_name') . "%")
+            ->get();
+
+
+        foreach ($invites as $invite)
+        {
+            $item = Invitee::find($invite->id);
+            $item->responded = 1;
+            $item->save();
+        }
 
         // the data that will be passed into the mail view blade template
         $data = array('name' => Input::get('first_name') . " " . Input::get('last_name'));
