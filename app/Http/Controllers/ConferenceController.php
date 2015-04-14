@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Commission;
 use App\ConferenceRegistrant;
 use App\Invitee;
 use Illuminate\Support\Facades\DB;
@@ -32,22 +33,16 @@ class ConferenceController extends Controller {
      */
     public function getRegistrant()
     {
-        $commissions = [
-            0  => "N/A",
-            1  => "Northwest Regional Service Commission",
-            2  => "Restigouche Regional Service Commission",
-            3  => "Chaleur Regional Service Commission",
-            4  => "Acadian Peninsula Regional Service Commission",
-            5  => "Greater Miramichi Regional Service Commission",
-            6  => "Kent Regional Service Commission",
-            7  => "Southeast Regional Service Commission",
-            8  => "Regional Service Commission 8 ",
-            9  => "Fundy Regional Service Commission",
-            10 => "Southwest New Brunswick Service Commission ",
-            11 => "Regional Service Commission 11",
-            12 => "Regional Service Commission 12 (Western Valley Regional Service Commission)",
-        ];
         $registrant = ConferenceRegistrant::find(Input::get('id'));
+
+        $commissions_result = Commission::all();
+
+        $commissions = [];
+
+        foreach($commissions_result as $commission)
+        {
+            $commissions[$commission->id] = $commission->commission_name;
+        }
 
         return View::make('vcms5::custom.conference-registrant')
             ->with('registrant', $registrant)
@@ -88,8 +83,18 @@ class ConferenceController extends Controller {
     {
         $registrant = ConferenceRegistrant::find(Input::get('id'));
 
+        $commissions_result = Commission::all();
+
+        $commissions = [];
+
+        foreach($commissions_result as $commission)
+        {
+            $commissions[$commission->id] = $commission->commission_name;
+        }
+
         return View::make("vcms5::custom.edit-conference-registrant")
-            ->with('registrant', $registrant);
+            ->with('registrant', $registrant)
+            ->with('commissions', $commissions);
     }
 
 
@@ -138,9 +143,18 @@ class ConferenceController extends Controller {
     public function getEditInvitee()
     {
         $invitee = Invitee::find(Input::get('id'));
+        $commissions_result = Commission::all();
+
+        $commissions = [];
+
+        foreach($commissions_result as $commission)
+        {
+            $commissions[$commission->id] = $commission->commission_name;
+        }
 
         return View::make('vcms5::custom.edit-invitee')
-            ->with("registrant", $invitee);
+            ->with("registrant", $invitee)
+            ->with("commissions", $commissions);
     }
 
 

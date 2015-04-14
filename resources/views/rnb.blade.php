@@ -136,22 +136,8 @@
                     </label>
 
                     <label for="commission_id">Regional Service Commission<br>
-                        <select id="commission_id" name="commission_id" class="required">
-                            <option value="0">N/A</option>
-                            <option value="1">Northwest Regional Service Commission</option>
-                            <option value="2">Restigouche Regional Service Commission </option>
-                            <option value="3">Chaleur Regional Service Commission</option>
-                            <option value="4">Acadian Peninsula Regional Service Commission</option>
-                            <option value="5">Greater Miramichi Regional Service Commission</option>
-                            <option value="6">Kent Regional Service Commission</option>
-                            <option value="7">Southeast Regional Service Commission</option>
-                            <option value="8">Regional Service Commission 8 </option>
-                            <option value="9">Fundy Regional Service Commission</option>
-                            <option value="10">Southwest New Brunswick Service Commission </option>
-                            <option value="11">Regional Service Commission 11</option>
-                            <option value="12">Regional Service Commission 12 (Western Valley Regional Service
-                                Commission)</option>
-                        </select>
+                        {!! Form::select('commission_id', $commissions,
+                        null) !!}
                     </label>
 
                 </fieldset>

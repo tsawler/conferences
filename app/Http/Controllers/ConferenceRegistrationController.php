@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Commission;
 use App\Conference;
 use App\ConferenceRegistrant;
 use App\Http\Requests\ConferenceRegistrationRequest;
@@ -28,9 +29,18 @@ class ConferenceRegistrationController extends Controller {
     public function getRegistrationform()
     {
         $conference = Conference::find(1);
+        $commissions_result = Commission::all();
+
+        $commissions = [];
+
+        foreach($commissions_result as $commission)
+        {
+            $commissions[$commission->id] = $commission->commission_name;
+        }
 
         return View::make('rnb')
-            ->with('conference', $conference);
+            ->with('conference', $conference)
+            ->with('commissions', $commissions);
     }
 
 

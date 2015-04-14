@@ -142,21 +142,7 @@
 
                 <div class="form-group">
                     {!! Form::label('commission_id', 'Regional Service Commission', array('class' => 'control-label')); !!}
-                    {!! Form::select('commission_id', array(
-                    '0' => 'N/A',
-                    '1' => 'Northwest Regional Service Commission',
-                    '2' => 'Restigouche Regional Service Commission',
-                    '3' => 'Chaleur Regional Service Commission',
-                    '4' => 'Acadian Peninsula Regional Service Commission',
-                    '5' => 'Greater Miramichi Regional Service Commission',
-                    '6' => 'Kent Regional Service Commission',
-                    '7' => 'Southeast Regional Service Commission',
-                    '8' => 'Regional Service Commission 8',
-                    '9' => 'Fundy Regional Service Commission',
-                    '10' => 'Southwest New Brunswick Service Commission',
-                    '11' => 'Regional Service Commission 11',
-                    '12' => 'Regional Service Commission 12 (Western Valley Regional Service Commission)',
-                    ),
+                    {!! Form::select('commission_id', $commissions,
                     null,
                     array('class' => 'form-control',
                     'style' => 'max-width: 400px;')) !!}
