@@ -41,6 +41,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::get('/login', '\Tsawler\Vcms5\controllers\VcmsLoginController@getLogin');
     Route::get('/admin/login', '\Tsawler\Vcms5\controllers\VcmsLoginController@getLogin');
     Route::post('/admin/login', '\Tsawler\Vcms5\controllers\VcmsLoginController@postLogin');
+    Route::get('/auth/login', '\Tsawler\Vcms5\controllers\VcmsLoginController@getLogin');
 
     Route::get('/changelanguage', '\Tsawler\Vcms5\controllers\VcmsLanguageController@getChangeLanguage');
 

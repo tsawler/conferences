@@ -49,6 +49,7 @@ class PublicPagesTest extends TestCase {
     {
         $this->call('GET', '/admin/dashboard');
         $this->assertResponseStatus(302);
+        $this->assertRedirectedTo('/auth/login');
     }
 
 
