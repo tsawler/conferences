@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
 
+/**
+ * Class ConferenceRegistrationController
+ * @package App\Http\Controllers
+ */
 class ConferenceRegistrationController extends Controller {
 
     /**
@@ -54,6 +58,10 @@ class ConferenceRegistrationController extends Controller {
     }
 
 
+    /**
+     * @param ConferenceRegistrationRequest $request
+     * @return mixed
+     */
     public function postRegistrationform(ConferenceRegistrationRequest $request)
     {
 
