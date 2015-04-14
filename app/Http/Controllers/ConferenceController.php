@@ -39,7 +39,7 @@ class ConferenceController extends Controller {
 
         $commissions = [];
 
-        foreach($commissions_result as $commission)
+        foreach ($commissions_result as $commission)
         {
             $commissions[$commission->id] = $commission->commission_name;
         }
@@ -87,7 +87,7 @@ class ConferenceController extends Controller {
 
         $commissions = [];
 
-        foreach($commissions_result as $commission)
+        foreach ($commissions_result as $commission)
         {
             $commissions[$commission->id] = $commission->commission_name;
         }
@@ -147,7 +147,7 @@ class ConferenceController extends Controller {
 
         $commissions = [];
 
-        foreach($commissions_result as $commission)
+        foreach ($commissions_result as $commission)
         {
             $commissions[$commission->id] = $commission->commission_name;
         }
@@ -183,12 +183,15 @@ class ConferenceController extends Controller {
 
     public function getExportRegistrantsToExcel()
     {
-        $query = "select title, last_name, first_name, company, email, address, city, zip, phone, created_at, updated_at from conference_registrants order by last_name";
+        $query = "select r.title, r.last_name, r.first_name, c.commission_name, r.company, r.email, r.address, "
+            . "r.city, r.zip, r.phone, r.created_at, r.updated_at from conference_registrants r "
+            . "left join commissions c on (r.commission_id = c.id) "
+            . "order by last_name";
         $results = DB::select(DB::raw($query));
 
         $final = [];
         $final[] = ['', date("Y-m-d H:i")];
-        $final[] = ['Title', 'Last Name', 'First Name', 'Company',
+        $final[] = ['Title', 'Last Name', 'First Name', 'Commission', 'Company',
             'Email', 'Address', 'City', 'Postal', 'Phone', 'Created', 'Updated'];
 
         foreach ($results as $result)
@@ -199,14 +202,10 @@ class ConferenceController extends Controller {
 
         Excel::create('Filename', function ($excel) use ($final)
         {
-
             $excel->sheet('Sheetname', function ($sheet) use ($final)
             {
-
                 $sheet->fromArray($final);
-
             });
-
         })->export('xlsx');
 
     }
