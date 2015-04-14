@@ -90,6 +90,8 @@
 
         {!! $conference->description_fr !!}
 
+        <p>Vous pouvez télécharger une {{ link_to('/agendas/agenda_fr.pdf', 'copie de l’ordre du jour ici') }}.</p>
+
         <hr>
 
         <br>
