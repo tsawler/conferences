@@ -86,7 +86,7 @@
 
             {!! $conference->description !!}
 
-            <p>You can download a {{ link_to('/agendas/agenda_en.pdf', 'copy of the agenda here') }}.</p>
+            <p>You can download a {!! link_to('/agendas/agenda_en.pdf', 'copy of the agenda here') !!}.</p>
 
             <hr>
 
