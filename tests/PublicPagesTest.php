@@ -1,7 +1,5 @@
 <?php
 
-use bids\Models\Page;
-
 class PublicPagesTest extends TestCase {
 
     /**
