@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\ConferenceRegistrant;
+use App\Invitee;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
@@ -95,4 +96,44 @@ class ConferenceController extends Controller {
         return Redirect::to('/admin/conferences/all-registrations');
 
     }
+
+
+    public function getInvitees()
+    {
+        $invitees = Invitee::orderBy('last_name')->get();
+
+        return View::make('vcms5::custom.conference-invitees')
+            ->with('invitees', $invitees);
+    }
+
+
+    public function getEditInvitee()
+    {
+        $invitee = Invitee::find(Input::get('id'));
+
+        return View::make('vcms5::custom.edit-invitee')
+            ->with("registrant", $invitee);
+    }
+
+
+    public function postEditInvitee()
+    {
+        $invitee = Invitee::find(Input::get('id'));
+
+        $invitee->first_name = Input::get('first_name');
+        $invitee->last_name = Input::get('last_name');
+        $invitee->company = Input::get('company');
+        $invitee->email = Input::get('email');
+        $invitee->city = Input::get('city');
+        $invitee->email = Input::get('phone');
+        $invitee->fax = Input::get('fax');
+        $invitee->band = Input::get('band');
+        $invitee->invite_type = Input::get('invite_type');
+        $invitee->save();
+
+
+        return Redirect::to('/admin/conferences/all-invitees');
+    }
+
+
 }
