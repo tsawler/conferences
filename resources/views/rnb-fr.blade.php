@@ -142,8 +142,7 @@
             </label>
 
             <label for="commission_id">Commissions de services régionaux<br>
-                {!! Form::select('commission_id', $commissions,
-                null) !!}
+                {!! Form::select('commission_id', $commissions, null) !!}
             </label>
 
         </fieldset>
@@ -155,11 +154,6 @@
         <button>Soumettre</button>
         <input type="hidden" name="conference_id" value="1">
         {!! Form::close() !!}
-
-
-
-
-
 
 
             </div>
