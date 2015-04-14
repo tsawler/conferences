@@ -92,29 +92,29 @@
         !!}
 
         <fieldset>
-            <legend>Registration Information</legend>
+            <legend>Renseignements sur l'inscription</legend>
             <br>
-            <label for="title">Title<br>
+            <label for="title">Titre<br>
                 <input type="text" id="title" name="title" class="required">
             </label>
 
-            <label for="first_name">First Name<br>
+            <label for="first_name">Prénom<br>
                 <input type="text" id="first_name" name="first_name" class="required">
             </label>
 
-            <label for="last_name">Last Name<br>
+            <label for="last_name">Nom<br>
                 <input type="text" id="last_name" name="last_name" class="required">
             </label>
 
-            <label for="company">Company/Organization<br>
+            <label for="company">Entreprise ou organisme<br>
                 <input type="text" id="company" name="company" class="required">
             </label>
 
-            <label for="email">Email address<br>
+            <label for="email">Courriel<br>
                 <input type="email" id="email" name="email" class="required email">
             </label>
 
-            <label for="address">Mailing address<br>
+            <label for="address">Addresse<br>
                 <input type="text" id="address" name="address" class="required">
             </label>
 
@@ -122,15 +122,15 @@
                 <input type="text" id="city" name="city" class="required">
             </label>
 
-            <label for="zip">Postal Code<br>
+            <label for="zip">Code postal<br>
                 <input type="text" id="zip" name="zip" class="required">
             </label>
 
-            <label for="phone">Phone<br>
+            <label for="phone">T&eacute;l&eacute;phone<br>
                 <input type="text" id="phone" name="phone" class="required">
             </label>
 
-            <label for="commission_id">Regional Service Commission<br>
+            <label for="commission_id">Commissions de services régionaux<br>
                 {!! Form::select('commission_id', $commissions,
                 null) !!}
             </label>
@@ -138,9 +138,10 @@
         </fieldset>
 
         <hr>
-        <p>You may wish to review our <a href="">privacy policy</a>. We will never share
-            your personal information with a third party, and only use it to organize the conference.</p>
-        <button>Submit Registration</button>
+
+        <p>Vous pouvez consulter notre <a href="">politique de confidentialité</a> . Nous ne allons jamais partager
+            vos informations personnelles avec un tiers et ne l'utiliser pour organiser la conférence .</p>
+        <button>Soumettre</button>
         <input type="hidden" name="conference_id" value="1">
         {!! Form::close() !!}
 

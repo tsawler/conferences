@@ -94,56 +94,56 @@
                 ))
                 !!}
 
-                <fieldset>
-                    <legend>Registration Information</legend>
-                    <br>
-                    <label for="title">Title<br>
-                        <input type="text" id="title" name="title" class="required">
-                    </label>
+        <fieldset>
+            <legend>Registration Information</legend>
+            <br>
+            <label for="title">Title<br>
+                <input type="text" id="title" name="title" class="required">
+            </label>
 
-                    <label for="first_name">First Name<br>
-                        <input type="text" id="first_name" name="first_name" class="required">
-                    </label>
+            <label for="first_name">First Name<br>
+                <input type="text" id="first_name" name="first_name" class="required">
+            </label>
 
-                    <label for="last_name">Last Name<br>
-                        <input type="text" id="last_name" name="last_name" class="required">
-                    </label>
+            <label for="last_name">Last Name<br>
+                <input type="text" id="last_name" name="last_name" class="required">
+            </label>
 
-                    <label for="company">Company/Organization<br>
-                        <input type="text" id="company" name="company" class="required">
-                    </label>
+            <label for="company">Company/Organization<br>
+                <input type="text" id="company" name="company" class="required">
+            </label>
 
-                    <label for="email">Email address<br>
-                        <input type="email" id="email" name="email" class="required email">
-                    </label>
+            <label for="email">Email address<br>
+                <input type="email" id="email" name="email" class="required email">
+            </label>
 
-                    <label for="address">Mailing address<br>
-                        <input type="text" id="address" name="address" class="required">
-                    </label>
+            <label for="address">Mailing address<br>
+                <input type="text" id="address" name="address" class="required">
+            </label>
 
-                    <label for="city">City/Town<br>
-                        <input type="text" id="city" name="city" class="required">
-                    </label>
+            <label for="city">City/Town<br>
+                <input type="text" id="city" name="city" class="required">
+            </label>
 
-                    <label for="zip">Postal Code<br>
-                        <input type="text" id="zip" name="zip" class="required">
-                    </label>
+            <label for="zip">Postal Code<br>
+                <input type="text" id="zip" name="zip" class="required">
+            </label>
 
-                    <label for="phone">Phone<br>
-                        <input type="text" id="phone" name="phone" class="required">
-                    </label>
+            <label for="phone">Phone<br>
+                <input type="text" id="phone" name="phone" class="required">
+            </label>
 
-                    <label for="commission_id">Regional Service Commission<br>
-                        {!! Form::select('commission_id', $commissions,
-                        null) !!}
-                    </label>
+            <label for="commission_id">Regional Service Commission<br>
+                {!! Form::select('commission_id', $commissions,
+                null) !!}
+            </label>
 
-                </fieldset>
+        </fieldset>
 
                 <hr>
-                <p>You may wish to review our <a href="">privacy policy</a>. We will never share
-                    your personal information with a third party, and only use it to organize the conference.</p>
-                <button>Submit Registration</button>
+        <p>You may wish to review our <a href="">privacy policy</a>. We will never share
+            your personal information with a third party, and only use it to organize the conference.</p>
+        <button>Submit Registration</button>
                 <input type="hidden" name="conference_id" value="1">
             {!! Form::close() !!}
 
