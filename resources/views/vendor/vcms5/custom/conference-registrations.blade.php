@@ -41,6 +41,8 @@
                     @endforeach
                     </tbody>
                 </table>
+
+                <a class="btn btn-default" href="/admin/conferences/export">Export to Excel</a>
             </div>
         </div>
     </div>

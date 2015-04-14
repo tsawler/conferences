@@ -26,6 +26,7 @@ Route::group(array('middleware' => 'auth'), function () // make sure authenticat
             Route::get('/admin/conferences/delete-invitee', 'ConferenceController@getDeleteInvitee');
             Route::get('/admin/conferences/all-invitees', 'ConferenceController@getInvitees');
             Route::get('/admin/conferences/print-badges', '\Tsawler\Vcms5\controllers\VcmsMenuController@getDdmenujson');
+            Route::get('/admin/conferences/export', 'ConferenceController@getExportRegistrantsToExcel');
         });
     });
 });

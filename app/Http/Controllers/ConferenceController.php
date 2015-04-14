@@ -2,10 +2,12 @@
 
 use App\ConferenceRegistrant;
 use App\Invitee;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\ConferenceRegistrationRequest;
+use Maatwebsite\Excel\Facades\Excel;
 
 /**
  * Class ConferenceController
@@ -31,16 +33,16 @@ class ConferenceController extends Controller {
     public function getRegistrant()
     {
         $commissions = [
-            0 => "N/A",
-            1 => "Northwest Regional Service Commission",
-            2 => "Restigouche Regional Service Commission",
-            3 => "Chaleur Regional Service Commission",
-            4 => "Acadian Peninsula Regional Service Commission",
-            5 => "Greater Miramichi Regional Service Commission",
-            6 => "Kent Regional Service Commission",
-            7 => "Southeast Regional Service Commission",
-            8 => "Regional Service Commission 8 ",
-            9 => "Fundy Regional Service Commission",
+            0  => "N/A",
+            1  => "Northwest Regional Service Commission",
+            2  => "Restigouche Regional Service Commission",
+            3  => "Chaleur Regional Service Commission",
+            4  => "Acadian Peninsula Regional Service Commission",
+            5  => "Greater Miramichi Regional Service Commission",
+            6  => "Kent Regional Service Commission",
+            7  => "Southeast Regional Service Commission",
+            8  => "Regional Service Commission 8 ",
+            9  => "Fundy Regional Service Commission",
             10 => "Southwest New Brunswick Service Commission ",
             11 => "Regional Service Commission 11",
             12 => "Regional Service Commission 12 (Western Valley Regional Service Commission)",
@@ -98,7 +100,7 @@ class ConferenceController extends Controller {
     public function postEditRegistrant(ConferenceRegistrationRequest $request)
     {
 
-        $registration =  ConferenceRegistrant::find(Input::get('id'));
+        $registration = ConferenceRegistrant::find(Input::get('id'));
 
         $registration->conference_id = Input::get('conference_id');
         $registration->title = Input::get('title');
@@ -164,5 +166,35 @@ class ConferenceController extends Controller {
         return Redirect::to('/admin/conferences/all-invitees');
     }
 
+
+    public function getExportRegistrantsToExcel()
+    {
+        $query = "select title, last_name, first_name, company, email, address, city, zip, phone, created_at, updated_at from conference_registrants order by last_name";
+        $results = DB::select(DB::raw($query));
+
+        $final = [];
+        $final[] = ['', date("Y-m-d H:i")];
+        $final[] = ['Title', 'Last Name', 'First Name', 'Company',
+            'Email', 'Address', 'City', 'Postal', 'Phone', 'Created', 'Updated'];
+
+        foreach ($results as $result)
+        {
+            $temp = (array) $result;
+            $final[] = $temp;
+        }
+
+        Excel::create('Filename', function ($excel) use ($final)
+        {
+
+            $excel->sheet('Sheetname', function ($sheet) use ($final)
+            {
+
+                $sheet->fromArray($final);
+
+            });
+
+        })->export('xlsx');
+
+    }
 
 }
