@@ -33,23 +33,29 @@ class ConferenceRegistrationController extends Controller {
      */
     public function getRegistrationform()
     {
+        $commissions = [];
         $conference = Conference::find(1);
+
         $commissions_result = Commission::all();
 
-        $commissions = [];
-
-        foreach($commissions_result as $commission)
-        {
-            $commissions[$commission->id] = $commission->commission_name;
-        }
 
         if (Session::get('lang') == 'en')
         {
+            foreach($commissions_result as $commission)
+            {
+                $commissions[$commission->id] = $commission->commission_name;
+            }
+
             return View::make('rnb')
                 ->with('conference', $conference)
                 ->with('commissions', $commissions);
         } else
         {
+            foreach($commissions_result as $commission)
+            {
+                $commissions[$commission->id] = $commission->commission_name_fr;
+            }
+
             return View::make('rnb-fr')
                 ->with('conference', $conference)
                 ->with('commissions', $commissions);
