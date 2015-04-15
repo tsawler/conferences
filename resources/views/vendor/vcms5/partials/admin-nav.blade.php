@@ -52,6 +52,7 @@
                     <ul class="nav nav-second-level">
                         <li><a href="/admin/conferences/all-registrations">All Registrations</a></li>
                         <li><a href="/admin/conferences/all-invitees">All Invitees</a></li>
+                        <li><a href="/admin/conferences/edit-invitee?id=0">Add Invitee</a></li>
                         <li><a href="/admin/conferences/print-badges">Print Badges</a></li>
                     </ul>
                 </li>

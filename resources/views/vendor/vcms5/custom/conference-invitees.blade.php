@@ -12,6 +12,7 @@
                     Conference Invitees
                 </h5>
                 <div class="ibox-tools">
+                    <a href="/admin/conferences/edit-invitee?id=0" class="btn btn-xs btn-primary">Add Invitee</a>
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
                     </a>
