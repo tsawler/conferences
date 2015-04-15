@@ -142,7 +142,11 @@ class ConferenceController extends Controller {
      */
     public function getEditInvitee()
     {
-        $invitee = Invitee::find(Input::get('id'));
+        if (Input::get('id') > 0)
+            $invitee = Invitee::find(Input::get('id'));
+        else
+            $invitee = new Invitee();
+
         $commissions_result = Commission::all();
 
         $commissions = [];
@@ -163,7 +167,10 @@ class ConferenceController extends Controller {
      */
     public function postEditInvitee()
     {
-        $invitee = Invitee::find(Input::get('id'));
+        if (Input::get('id') > 0)
+            $invitee = Invitee::find(Input::get('id'));
+        else
+            $invitee = new Invitee();
 
         $invitee->first_name = Input::get('first_name');
         $invitee->last_name = Input::get('last_name');
