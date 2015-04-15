@@ -167,6 +167,10 @@
             });
             @endif
         });
+
+        function stub() {
+            bootbox.alert("This functionality is not yet implemented!");
+        }
     </script>
     @yield('bottom-js')
 </body>
