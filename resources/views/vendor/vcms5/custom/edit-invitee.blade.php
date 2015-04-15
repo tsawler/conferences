@@ -1,7 +1,7 @@
 @extends('vcms5::base')
 
 @section('top-white')
-    <h1>Conference Registrations</h1>
+    <h1>Conference Invitee</h1>
 @stop
 
 @section('content')
