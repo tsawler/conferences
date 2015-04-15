@@ -1,6 +1,9 @@
 <?php
 
-Route::get('/', 'ConferenceRegistrationController@getRegistrationform');
+Route::get('/', function(){
+   return View::make('index');
+});
+Route::get('/conference', 'ConferenceRegistrationController@getRegistrationform');
 Route::post('/register', 'ConferenceRegistrationController@postRegistrationform');
 
 Route::post('/queue/push', function ()
