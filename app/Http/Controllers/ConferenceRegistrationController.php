@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\App;
 
 /**
  * Class ConferenceRegistrationController
@@ -33,6 +34,11 @@ class ConferenceRegistrationController extends Controller {
      */
     public function getRegistrationform()
     {
+        if (Input::has('lang'))
+        {
+            Session::put('lang', Input::get('lang'));
+            App::setLocale(Input::get('lang'));
+        }
         $commissions = [];
         $conference = Conference::find(1);
 
