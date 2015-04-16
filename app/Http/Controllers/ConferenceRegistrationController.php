@@ -109,8 +109,8 @@ class ConferenceRegistrationController extends Controller {
         // use Mail::send function to send email passing the data and using the $user variable in the closure
         Mail::queue('emails.notification-email', $data, function ($message)
         {
-            $message->from('info@recyclenb.com', 'Recycle NB');
-            $message->to('info@crecyclenb.com')->subject('Conference Registration Recieved');
+            $message->from('donotreply@recyclenb.com', 'Recycle NB');
+            $message->to('info@recyclenb.com')->subject('Conference Registration Recieved');
         });
 
 
