@@ -151,6 +151,8 @@ return [
         'Tsawler\Vcms5\Vcms5ServiceProvider',
         'Jenssegers\Date\DateServiceProvider',
         'Maatwebsite\Excel\ExcelServiceProvider',
+        'Barryvdh\DomPDF\ServiceProvider',
+
 
     ],
 
@@ -205,6 +207,8 @@ return [
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'Date'      => 'Jenssegers\Date\Date',
         'Excel'     => 'Maatwebsite\Excel\Facades\Excel',
+        'PDF'       => 'Barryvdh\DomPDF\Facade',
+
 
     ],
 
