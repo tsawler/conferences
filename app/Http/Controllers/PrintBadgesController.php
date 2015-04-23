@@ -29,13 +29,9 @@ class PrintBadgesController extends Controller {
         $fpdf = new \fpdi\FPDI('P', 'mm', 'Letter');
         $fpdf->setSourceFile(base_path() . "/resources/pdf/badges.pdf");
         $tplIdx = $fpdf->importPage(1);
-
         $s = $fpdf->getTemplatesize($tplIdx);
-        $fpdf->AddPage($s['h'] > $s['w'] ? 'P' : 'L', array($s['w'], $s['h'])); // This gets it the right dimensions
-
+        $fpdf->AddPage($s['h'] > $s['w'] ? 'P' : 'L', array($s['w'], $s['h']));
         $fpdf->useTemplate($tplIdx, 0, 0, 0, 0, true);
-        $x = 55;
-        $y = 60;
 
         $x_array = [55, 155, 55, 155, 55, 155];
         $y_array = [65, 65, 140, 140, 215, 215];
@@ -54,21 +50,21 @@ class PrintBadgesController extends Controller {
             }
 
             $fpdf->SetFont('Helvetica', '', 18);
-            $name = strtoupper($registrant->first_name . " " . $registrant->last_name);
-            $width = $fpdf->GetStringWidth($name);
+            $name = $registrant->first_name . " " . $registrant->last_name;
+            $width = $fpdf->GetStringWidth(iconv('UTF-8', 'windows-1252', $name));
             $width = $width / 2;
             $fpdf->SetXY($x_array[$index] - $width, $y_array[$index]);
-            $fpdf->Write(0, $name);
+            $fpdf->Write(0, iconv('UTF-8', 'windows-1252', $name));
 
             $fpdf->SetFont('Helvetica', '', 14);
-            $width = $fpdf->GetStringWidth($registrant->title);
-            $width = $width / 2;
-            $fpdf->setXY($x_array[$index] - $width, $y_array[$index] + 15);
-            $fpdf->Write(0, strtoupper($registrant->title));
+            $newwidth = $fpdf->GetStringWidth(iconv('UTF-8', 'windows-1252', $registrant->title));
+            $newwidth = $newwidth / 2;
+            $fpdf->setXY($x_array[$index] - $newwidth, $y_array[$index] + 15);
+            $fpdf->Write(0, iconv('UTF-8', 'windows-1252', $registrant->title));
             $index = $index + 1;
         }
 
-        $text = $fpdf->output('test.pdf', 'D');
+        $fpdf->output('test.pdf', 'D');
 
     }
 
