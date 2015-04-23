@@ -34,6 +34,9 @@ Route::group(array('middleware' => 'auth'), function () // make sure authenticat
             Route::get('/admin/conferences/all-invitees', 'ConferenceController@getInvitees');
             Route::get('/admin/conferences/print-badges', '\Tsawler\Vcms5\controllers\VcmsMenuController@getDdmenujson');
             Route::get('/admin/conferences/export', 'ConferenceController@getExportRegistrantsToExcel');
+            Route::get('/admin/conferences/printbadges', 'PrintBadgesController@getPrintBadges');
+            Route::get('/admin/conferences/generateBadgesPDF', 'PrintBadgesController@getPrintpdf');
+            Route::get('/admin/conferences/test', 'PrintBadgesController@testPdf');
         });
     });
 });

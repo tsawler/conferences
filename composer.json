@@ -14,7 +14,6 @@
 		"laravel/framework": "5.0.*",
         "illuminate/html": "~5.0",
         "intervention/image": "2.*",
-        "francodacosta/phmagick": "0.4.*@dev",
         "barryvdh/laravel-elfinder": "0.3.*",
         "jenssegers/date": "~2.0",
         "tsawler/vcms5": "dev-development",
@@ -22,7 +21,11 @@
         "filp/whoops": "~1.0",
         "guzzlehttp/guzzle": "~4.0",
         "iron-io/iron_mq": "1.5.*",
-        "maatwebsite/excel": "~2.0.0"
+        "maatwebsite/excel": "~2.0.0",
+        "barryvdh/laravel-dompdf": "0.5.*",
+        "tecnick.com/tcpdf": "6.2.6",
+        "itbz/fpdf": "1.7.2",
+        "itbz/fpdi": "1.5.2-patch2"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
