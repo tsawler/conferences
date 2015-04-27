@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\ConferenceRegistrant;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
 use TCPDF;
 
@@ -37,6 +38,7 @@ class PrintBadgesController extends Controller {
         $y_array = [65, 65, 140, 140, 215, 215];
         $fpdf->SetTextColor(0, 0, 0);
         $index = 0;
+
         foreach ($registrants as $registrant)
         {
             if ($index == 6)
@@ -56,12 +58,15 @@ class PrintBadgesController extends Controller {
             $fpdf->SetXY($x_array[$index] - $width, $y_array[$index]);
             $fpdf->Write(0, iconv('UTF-8', 'windows-1252', $name));
 
-            $fpdf->SetFont('Helvetica', '', 14);
-            $newwidth = $fpdf->GetStringWidth(iconv('UTF-8', 'windows-1252', $registrant->title));
+            $fpdf->SetFont('Helvetica', '', 12);
+            $newwidth = $fpdf->GetStringWidth(iconv('UTF-8', 'windows-1252', $registrant->company));
             $newwidth = $newwidth / 2;
             $fpdf->setXY($x_array[$index] - $newwidth, $y_array[$index] + 15);
-            $fpdf->Write(0, iconv('UTF-8', 'windows-1252', $registrant->title));
+            $fpdf->Write(0, iconv('UTF-8', 'windows-1252', $registrant->company));
             $index = $index + 1;
+            Log::info('index -> '. $index);
+            Log::info('registrant -> ' . $registrant->first_name . " " . $registrant->last_name);
+            Log::info('company -> ' . $registrant->company);
         }
 
         $fpdf->output('test.pdf', 'D');
