@@ -64,9 +64,6 @@ class PrintBadgesController extends Controller {
             $fpdf->setXY($x_array[$index] - $newwidth, $y_array[$index] + 15);
             $fpdf->Write(0, iconv('UTF-8', 'windows-1252', $registrant->company));
             $index = $index + 1;
-            Log::info('index -> '. $index);
-            Log::info('registrant -> ' . $registrant->first_name . " " . $registrant->last_name);
-            Log::info('company -> ' . $registrant->company);
         }
 
         $fpdf->output('test.pdf', 'D');
