@@ -1,9 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\ConferenceRegistrant;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
-use TCPDF;
 
 /**
  * Class PrintBadgesController
